@@ -5,40 +5,37 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HomeWork_01
+
 {
     internal class Car
     {
-        private string model { get; set; }
-        private string color { get; set; }
-        private string carBodyType { get; set; }
-        private double powerMotor { get; set; }
-        private int maxSpeed { get; set; }
-        private int speedNow { get; set; }
-        public Car (string _model, string _color, string _carBodyType, double _powerMotor, int _maxSpeed, int _speedNow ) 
+
+        public string model { get; set; }
+        public string color { get; set; }
+        public string numberOfCar { get; set; }
+        public int powerMotor { get; set; }
+
+        private int maxSpeed;
+
+        private int speedNow;
+
+        public DateTime dateAraive { get; set; }
+        public DateTime dateOfDeparture { get; set; }
+
+        public Car (string _model, string _color = "null", string _numberOfCar = "null", int _powerMotor =0 , int _maxSpeed = 0) 
         {
             model = _model;
             color = _color;
-            carBodyType = _carBodyType;
+            numberOfCar = _numberOfCar;
             powerMotor = _powerMotor;
             maxSpeed = _maxSpeed;
-            model = _model;
-            speedNow= _speedNow;
         }
-        public Car() 
-        {
-            model = "NoSelectedModel";
-            color = "NoSelectedColor";
-            carBodyType = "NoSelectedBody";
-            powerMotor = 0.0;
-            maxSpeed = 0;
-            speedNow = 0;
-        }
-        public Car(string _model, int _maxSpeed, int _speedNow) 
+        public Car(string _model, int _maxSpeed, int _speedNow, string _numberOfCar = "null") 
         {
             model = _model;
             maxSpeed = _maxSpeed;
             speedNow = _speedNow;
-
+            numberOfCar= _numberOfCar;
         }
         public void AddSpeed ( int _speedAdd) 
         {
@@ -50,7 +47,6 @@ namespace HomeWork_01
             {
                 speedNow += _speedAdd;
             }
-                
         }
 
         public void SubSpeed(int _speedSub)

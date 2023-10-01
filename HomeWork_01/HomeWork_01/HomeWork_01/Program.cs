@@ -3,11 +3,21 @@ using HomeWork_01;
 using System.Reflection;
 
 
-var Car1 = new Car();
+var Car1 = new Car("Tesla",200,15,"Number1");
+var Car2 = new Car("Skoda", 150,1, "Number2");
 
-IEnumerable <FieldInfo> fields = Car1.GetType().GetTypeInfo().DeclaredFields;
+Car1.AddSpeed(35);
+Car1.AddSpeed(305);
+Car1.SubSpeed(6);
+var messege = new ConsoleMessege();
+var myParking = new Parking(messege);
+myParking.CarAdd(Car1);
+Thread.Sleep(2000);
+myParking.CarAdd(Car2);
+myParking.CarSub(Car2);
+var allCar = myParking.Cars;
 
-foreach (var field in fields.Where(x => !x.IsStatic))
+foreach (var car in allCar)
 {
-    Console.WriteLine($" Имя поля {field.Name} {field.GetValue(Car1)}");
+    Console.WriteLine($"Машин осталось на паркинге {car.car.model} прибыла в {car.time}");
 }
