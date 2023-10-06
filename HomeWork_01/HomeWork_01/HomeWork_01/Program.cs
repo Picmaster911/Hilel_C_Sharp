@@ -2,22 +2,24 @@
 using HomeWork_01;
 using System.Reflection;
 
+var color1 = new Color(100,200,234,100);
+var color2 = new Color(70,79,67,45);
 
-var Car1 = new Car("Tesla",200,15,"Number1");
-var Car2 = new Car("Skoda", 150,1, "Number2");
+var car1 = new Car(1,"Tesla","S", color1,"Number1");
+var car2 = new Car(2, "Skoda", "S", color2, "Number2");
+var InfoParking = new AboutParking("Parking 2", " Street Mira 1");
 
-Car1.AddSpeed(35);
-Car1.AddSpeed(305);
-Car1.SubSpeed(6);
 var messege = new ConsoleMessege();
-var myParking = new Parking(messege);
-myParking.CarAdd(Car1);
+var myParking = new Parking(messege, InfoParking, 100);
+myParking.CarAdd(car1);
 Thread.Sleep(2000);
-myParking.CarAdd(Car2);
-myParking.CarSub(Car2);
-var allCar = myParking.Cars;
+myParking.CarAdd(car2);
+myParking.CarSub(car2);
+var allCar = myParking.GetAllCars();
 
 foreach (var car in allCar)
 {
-    Console.WriteLine($"Машин осталось на паркинге {car.car.model} прибыла в {car.time}");
+    Console.WriteLine($"Cars in parking {car.Model} arrived {car.DateAraive}");
+    Console.WriteLine($"Free place item {myParking.GetFreeParkingSpace()}");
+    Console.WriteLine(myParking.GetStateMessage());
 }

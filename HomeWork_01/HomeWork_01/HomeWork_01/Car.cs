@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,56 +10,38 @@ namespace HomeWork_01
 {
     internal class Car
     {
+        private int _id;
+        private Color _color;
+        public string Model { get; set; }
+        public string Type { get; set; }
+        public string NumberOfCar { get; set; }
+        public DateTime DateAraive { get; set; }
+        public DateTime DateOfDeparture { get; set; }
+        public int Id { get => _id; }
 
-        public string model { get; set; }
-        public string color { get; set; }
-        public string numberOfCar { get; set; }
-        public int powerMotor { get; set; }
-
-        private int maxSpeed;
-
-        private int speedNow;
-
-        public DateTime dateAraive { get; set; }
-        public DateTime dateOfDeparture { get; set; }
-
-        public Car (string _model, string _color = "null", string _numberOfCar = "null", int _powerMotor =0 , int _maxSpeed = 0) 
+        /// <summary>
+        /// Object Car
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <param name="type"></param>
+        /// <param name="color"></param>
+        /// <param name="numberOfCar"></param>
+        public Car ( int id, string model,string type, Color color, string numberOfCar)
         {
-            model = _model;
-            color = _color;
-            numberOfCar = _numberOfCar;
-            powerMotor = _powerMotor;
-            maxSpeed = _maxSpeed;
+            _id = id;
+            Model = model;
+            Type = type;    
+            _color = color;
+            NumberOfCar = numberOfCar;  
         }
-        public Car(string _model, int _maxSpeed, int _speedNow, string _numberOfCar = "null") 
+        /// <summary>
+        /// Method change color car 
+        /// </summary>
+        /// <param name="color"></param>
+        public void ChangeColor (Color color) 
         {
-            model = _model;
-            maxSpeed = _maxSpeed;
-            speedNow = _speedNow;
-            numberOfCar= _numberOfCar;
-        }
-        public void AddSpeed ( int _speedAdd) 
-        {
-            if (speedNow + _speedAdd > maxSpeed)
-            {
-                speedNow = maxSpeed;
-            }
-            else
-            {
-                speedNow += _speedAdd;
-            }
-        }
-
-        public void SubSpeed(int _speedSub)
-        {
-            if (speedNow - _speedSub < 0) 
-            {
-                speedNow = 0;
-            }
-            else
-            {
-                speedNow -= _speedSub;
-            }
+            _color= color;
         }
     }
 }

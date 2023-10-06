@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Reflection;
@@ -9,50 +10,93 @@ namespace HomeWork_01
     internal class Parking
     {
         private readonly IMessege messege;
-
-        public Parking(IMessege messege)
+        private int _freeParkingSpace;
+        private int _capacity;
+        private int _countAllCar;
+        private AboutParking _info;
+        /// <summary>
+        /// Parking object
+        /// </summary>
+        /// <param name="messege"></param>
+        /// <param name="info"></param>
+        /// <param name="capacity"></param>
+        public Parking(IMessege messege, AboutParking info ,int capacity)
         {
             this.messege = messege;
+            _info = info;
+            _capacity = capacity;
         }
 
-        public List<CarWithTime> Cars = new List<CarWithTime>();
-
-        public List<CarWithTime> CarAdd(Car _newCar)
+        private List <Car> cars = new List <Car>();
+        /// <summary>
+        /// Add car to store
+        /// </summary>
+        /// <param name="newCar"></param>
+        /// <returns></returns>
+        public List <Car> CarAdd(Car newCar)
         {
-            _newCar.dateAraive = DateTime.Now;
-
-            var newCarAdd = new CarWithTime()
+            if (_countAllCar < 100) 
             {
-                car = _newCar,
-                time = DateTime.Now,
-
-            };
-            Cars.Add(newCarAdd);
-            messege.SendMessege($"Машина {_newCar.model} с номером {_newCar.numberOfCar} прибыла на стоянку в {_newCar.dateAraive}");  
-            return Cars;
-        }
-        private int findCarId (Car _deleteCar, List<CarWithTime> allCar ) 
-        {
-            var index = 0;
-           foreach ( var car in allCar )
+                _countAllCar += 1;
+                newCar.DateAraive = DateTime.Now;
+                cars.Add(newCar);
+                messege.SendMessege($"Car {newCar.Model} with number {newCar.NumberOfCar} arive in {newCar.DateAraive}");
+                return cars;
+            }            
+            else 
             {
-                index = allCar.FindIndex(item => item.car.numberOfCar == _deleteCar.numberOfCar);
+             messege.SendMessege($"Sory parking is full {newCar.DateAraive}");
+             return cars;
             }
-            return index;
         }
+        /// <summary>
+        /// Delete car from store
+        /// </summary>
+        /// <param name="carForDelete"></param>
+        /// <returns></returns>
+        public List <Car> CarSub(Car carForDelete)
+        {
+            if (_countAllCar > 0)
+            {
+                _countAllCar -= 1;
+                cars.RemoveAll(car => car.Id == carForDelete.Id);
+                carForDelete.DateOfDeparture = DateTime.Now;
+                messege.SendMessege($"Car {carForDelete.Model} with number {carForDelete.NumberOfCar}" +
+                    $" left parking {carForDelete.DateOfDeparture}");
+                return cars;
+            }
+            else
+            {
+                messege.SendMessege($"Sory you can not delete Car, parking is empty {_countAllCar}");
+                return cars;
+            }
 
-        public List<CarWithTime> CarSub(Car _car)
-        {
-            _car.dateOfDeparture = DateTime.Now;
-            var index = findCarId(_car, Cars);
-            Cars.RemoveAt(index);
-            messege.SendMessege($"Машина {_car.model} с номером {_car.numberOfCar} выехала со стоянки в {_car.dateOfDeparture}");
-            return Cars;            
         }
-        public record CarWithTime
+        /// <summary>
+        ///  Get all cars fron store
+        /// </summary>
+        /// <returns></returns>
+        public List <Car> GetAllCars() 
         {
-            public DateTime? time;
-            public Car? car;
+            return cars;
+        }
+        /// <summary>
+        /// Return string about state parking
+        /// </summary>
+        /// <returns>Masage string state parking</returns>
+        public string GetStateMessage ()
+        {
+            _freeParkingSpace = _capacity - _countAllCar;
+            return $"Cars in parking {_countAllCar}, free spase item {_capacity - _countAllCar }"; 
+        }
+        /// <summary>
+        /// Return free item space 
+        /// </summary>
+        /// <returns>int item space</returns>
+        public int GetFreeParkingSpace() 
+        {
+            _freeParkingSpace = _capacity - _countAllCar;
+            return _freeParkingSpace;
         }
     }
 }
