@@ -9,10 +9,9 @@ namespace HomeWork_01
 {
     internal class Parking
     {
-        private readonly IMessege messege;
-        private int _freeParkingSpace;
+        private readonly IMessege _messege;
         private int _capacity;
-        private int _countAllCar;
+
         private AboutParking _info;
         /// <summary>
         /// Parking object
@@ -20,33 +19,30 @@ namespace HomeWork_01
         /// <param name="messege"></param>
         /// <param name="info"></param>
         /// <param name="capacity"></param>
-        public Parking(IMessege messege, AboutParking info ,int capacity)
+        public Parking(IMessege messege, AboutParking info, int capacity)
         {
-            this.messege = messege;
+            this._messege = messege;
             _info = info;
             _capacity = capacity;
         }
 
-        private List <Car> cars = new List <Car>();
+        private List<Car> _cars = new List<Car>();
         /// <summary>
         /// Add car to store
         /// </summary>
         /// <param name="newCar"></param>
         /// <returns></returns>
-        public List <Car> CarAdd(Car newCar)
+        public void CarAdd(Car newCar)
         {
-            if (_countAllCar < 100) 
+            if (_cars.Count < 100)
             {
-                _countAllCar += 1;
                 newCar.DateAraive = DateTime.Now;
-                cars.Add(newCar);
-                messege.SendMessege($"Car {newCar.Model} with number {newCar.NumberOfCar} arive in {newCar.DateAraive}");
-                return cars;
-            }            
-            else 
+                _cars.Add(newCar);
+                _messege.SendMessege($"Car {newCar.Model} with number {newCar.NumberOfCar} arive in {newCar.DateAraive}");
+            }
+            else
             {
-             messege.SendMessege($"Sory parking is full {newCar.DateAraive}");
-             return cars;
+                _messege.SendMessege($"Sory parking is full {newCar.DateAraive}");
             }
         }
         /// <summary>
@@ -54,21 +50,18 @@ namespace HomeWork_01
         /// </summary>
         /// <param name="carForDelete"></param>
         /// <returns></returns>
-        public List <Car> CarSub(Car carForDelete)
+        public void CarSub(Car carForDelete)
         {
-            if (_countAllCar > 0)
+            if (_cars.Count > 0)
             {
-                _countAllCar -= 1;
-                cars.RemoveAll(car => car.Id == carForDelete.Id);
+                _cars.RemoveAll(car => car.Id == carForDelete.Id);
                 carForDelete.DateOfDeparture = DateTime.Now;
-                messege.SendMessege($"Car {carForDelete.Model} with number {carForDelete.NumberOfCar}" +
+                _messege.SendMessege($"Car {carForDelete.Model} with number {carForDelete.NumberOfCar}" +
                     $" left parking {carForDelete.DateOfDeparture}");
-                return cars;
             }
             else
             {
-                messege.SendMessege($"Sory you can not delete Car, parking is empty {_countAllCar}");
-                return cars;
+                _messege.SendMessege($"Sory you can not delete Car, parking is empty {_capacity - _cars.Count}");
             }
 
         }
@@ -76,27 +69,25 @@ namespace HomeWork_01
         ///  Get all cars fron store
         /// </summary>
         /// <returns></returns>
-        public List <Car> GetAllCars() 
+        public List<Car> GetAllCars()
         {
-            return cars;
+            return _cars;
         }
         /// <summary>
         /// Return string about state parking
         /// </summary>
         /// <returns>Masage string state parking</returns>
-        public string GetStateMessage ()
+        public string GetStateMessage()
         {
-            _freeParkingSpace = _capacity - _countAllCar;
-            return $"Cars in parking {_countAllCar}, free spase item {_capacity - _countAllCar }"; 
+            return $"Cars in parking {_cars.Count}, free spase item {_capacity - _cars.Count}";
         }
         /// <summary>
         /// Return free item space 
         /// </summary>
         /// <returns>int item space</returns>
-        public int GetFreeParkingSpace() 
+        public int GetFreeParkingSpace()
         {
-            _freeParkingSpace = _capacity - _countAllCar;
-            return _freeParkingSpace;
+            return _capacity - _cars.Count;
         }
     }
 }

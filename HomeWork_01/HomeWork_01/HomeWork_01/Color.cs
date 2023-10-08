@@ -16,10 +16,10 @@ namespace HomeWork_01
         /// <summary>
         /// RedColor
         /// </summary>
-        public int RedColor 
-        { 
+        public int RedColor
+        {
             get => _redColor;
-            set => _redColor =  value < 255 ? value : 0;
+            set => _redColor = IsColorValid(value) ? value : 0;
         }
         /// <summary>
         /// GreenColor
@@ -27,7 +27,7 @@ namespace HomeWork_01
         public int GreenColor
         {
             get => _greenColor;
-            set => _greenColor = value < 255 && value > 0 ? value : 0;
+            set => _greenColor = IsColorValid(value) ? value : 0;
         }
         /// <summary>
         /// BlueColor
@@ -35,7 +35,7 @@ namespace HomeWork_01
         public int BlueColor
         {
             get => _blueColor;
-            set => _blueColor = value < 255 && value > 0 ? value : 0;
+            set => _blueColor = IsColorValid(value) ? value : 0;
         }
         /// <summary>
         /// Opacity
@@ -43,7 +43,7 @@ namespace HomeWork_01
         public int Opacity
         {
             get => _opacity;
-            set => _opacity = value < 100 && value > 0 ? value : 0;
+            set => _opacity = IsOpacityValid(value) ? value : 0;
         }
         /// <summary>
         /// Constructor for color Car R, G, B, Opacity  
@@ -52,12 +52,20 @@ namespace HomeWork_01
         /// <param name="greenColor"></param>
         /// <param name="blueColor"></param>
         /// <param name="opacity"></param>
-        public Color (int redColor, int greenColor , int blueColor, int opacity)
+        static bool IsColorValid(int colorValue)
         {
-            _redColor = redColor < 255 && redColor > 0 ? redColor : 0;
-            _greenColor = greenColor < 255 && greenColor > 0 ? greenColor : 0;
-            _blueColor = blueColor < 255 && blueColor > 0 ? blueColor : 0;
-            _opacity = opacity < 100 && opacity > 0 ? opacity : 0;
+            return colorValue is < 255 and >= 0 ? true : false;
+        }
+        static bool IsOpacityValid(int colorValue)
+        {
+            return colorValue is < 100and >= 0 ? true : false;
+        }
+        public Color(int redColor, int greenColor, int blueColor, int opacity)
+        {
+            _redColor = IsColorValid(redColor) ? redColor : 0;
+            _greenColor = IsColorValid(greenColor) ? greenColor : 0;
+            _blueColor = IsColorValid(greenColor) ? blueColor : 0;
+            _opacity = IsOpacityValid(greenColor) ? opacity : 0;
         }
     }
 }
