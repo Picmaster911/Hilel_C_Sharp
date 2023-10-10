@@ -2,7 +2,7 @@
 using HomeWork_01;
 using System.Reflection;
 
-var color1 = new Color(600,200,234,100);
+var color1 = new Color(200,200,234,100);
 var color2 = new Color(70,79,67,45);
 
 var car1 = new Car(1,"Tesla","S", color1,"Number1");
