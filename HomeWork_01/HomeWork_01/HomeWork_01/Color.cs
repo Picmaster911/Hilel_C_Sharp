@@ -58,14 +58,33 @@ namespace HomeWork_01
         }
         static bool IsOpacityValid(int colorValue)
         {
-            return colorValue is < 100and >= 0 ? true : false;
+            return colorValue is < 100 and >= 0 ? true : false;
         }
+        /// <summary>
+        ///  Object color create
+        ///  R = 0-255, G = 0-255, B = 0-255, Opacity = 0-100,
+        /// </summary>
+        /// <param name="redColor"></param>
+        /// <param name="greenColor"></param>
+        /// <param name="blueColor"></param>
+        /// <param name="opacity"></param>
         public Color(int redColor, int greenColor, int blueColor, int opacity)
         {
             _redColor = IsColorValid(redColor) ? redColor : 0;
             _greenColor = IsColorValid(greenColor) ? greenColor : 0;
             _blueColor = IsColorValid(greenColor) ? blueColor : 0;
             _opacity = IsOpacityValid(greenColor) ? opacity : 0;
+        }
+        /// <summary>
+        /// Object color create with defalut value R =100,
+        /// G =100, B =100, Opacity =0;
+        /// </summary>
+        public Color()
+        {
+            _redColor = 100;
+            _greenColor = 100;
+            _blueColor = 100;
+            _opacity = 0;
         }
     }
 }

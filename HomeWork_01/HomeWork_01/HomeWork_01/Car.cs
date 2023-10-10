@@ -27,13 +27,28 @@ namespace HomeWork_01
         /// <param name="type"></param>
         /// <param name="color"></param>
         /// <param name="numberOfCar"></param>
-        public Car ( int id, string model,string type, Color color, string numberOfCar)
+        public Car ( int id, string type,string model, Color color, string numberOfCar)
         {
             _id = id;
             Model = model;
             Type = type;    
             _color = color;
             NumberOfCar = numberOfCar;  
+        }
+        /// <summary>
+        /// Car set clor default value; 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="type"></param>
+        /// <param name="numberOfCar"></param>
+        /// <param name="model"></param>
+        public Car(int id, string type, string numberOfCar, string model ="NoName")
+        {
+            _id = id;
+            Model = model;
+            Type = type;
+            _color = new Color();
+            NumberOfCar = numberOfCar;
         }
         /// <summary>
         /// Method change color car 
