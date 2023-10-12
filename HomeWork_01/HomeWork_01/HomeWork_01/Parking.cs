@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace HomeWork_01
 {
-    internal class Parking: IDisposable
+    internal class Parking : IDisposable
     {
         private readonly IMessege _messege;
         private int _capacity;
@@ -19,7 +19,7 @@ namespace HomeWork_01
         /// <param name="messege"></param>
         /// <param name="info"></param>
         /// <param name="capacity"></param>
-        
+
         public Parking(IMessege messege, AboutParking info, int capacity)
         {
             this._messege = messege;
@@ -36,7 +36,7 @@ namespace HomeWork_01
         public Parking(IMessege messege, int capacity, string adress)
         {
             _messege = messege;
-            _info = new AboutParking("ParkingDefault", adress);       
+            _info = new AboutParking("ParkingDefault", adress);
             _capacity = capacity;
         }
         /// <summary>
@@ -78,17 +78,10 @@ namespace HomeWork_01
         /// Id auto  increment
         /// </summary>
         /// <param name="number"></param>
-<<<<<<< HEAD
-        public void CarAdd(string number,int id)
+        public void CarAdd(string number, int id)
         {
-            var newCar = new Car(id,"NoType", number);
+            var newCar = new Car(id, "NoType", number);
             if (_cars.Count < _capacity)
-=======
-        public void CarAdd(string number )
-        {
-            var newCar = new Car(_cars.Count + 1,"NoType", number);
-            if (_cars.Count < 100)
->>>>>>> f0a1d83c3fc5c778e4c168a3b0fc2719cca6b0d6
             {
                 newCar.DateAraive = DateTime.Now;
                 _cars.Add(newCar);
@@ -118,7 +111,6 @@ namespace HomeWork_01
                 _messege.SendMessege($"Sory you can not delete Car, parking is empty {_capacity - _cars.Count}");
             }
         }
-
         /// <summary>
         /// Delete Care by Id
         /// </summary>
@@ -165,17 +157,14 @@ namespace HomeWork_01
 
         public void Dispose()
         {
-            foreach(Car car in _cars )
+            foreach (Car car in _cars)
             {
                 car.DateOfDeparture = DateTime.Now;
                 _messege.SendMessege($"Car {car.Model} with number {car.NumberOfCar}" +
                    $" left parking {car.DateOfDeparture}");
             }
             _messege.SendMessege("Parking closed, good bye !");
-<<<<<<< HEAD
             _cars.Clear();
-=======
->>>>>>> f0a1d83c3fc5c778e4c168a3b0fc2719cca6b0d6
         }
     }
 }
