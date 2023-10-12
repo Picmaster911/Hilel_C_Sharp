@@ -16,7 +16,11 @@ using (var myParking = new Parking(messege, InfoParking, 100))
     Thread.Sleep(2000);
     myParking.CarAdd(car2);
     myParking.CarAdd(car3);
+<<<<<<< HEAD
     myParking.CarAdd("Number4",5);
+=======
+    myParking.CarAdd("Number4");
+>>>>>>> f0a1d83c3fc5c778e4c168a3b0fc2719cca6b0d6
     myParking.CarSub(1);
     var allCar = myParking.GetAllCars();
 
