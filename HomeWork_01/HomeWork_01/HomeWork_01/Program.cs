@@ -8,7 +8,6 @@ var car1 = new Car(1, "Tesla", "S", color1, "Number1");
 var car2 = new Car(2, "Skoda", "oktavia", color2, "Number2");
 var car3 = new Car(3, "X5", "Number3");
 var InfoParking = new AboutParking("Parking 2", " Street Mira 1");
-
 var messege = new ConsoleMessege();
 
 using (var myParking = new Parking(messege, InfoParking, 100))
@@ -17,7 +16,7 @@ using (var myParking = new Parking(messege, InfoParking, 100))
     Thread.Sleep(2000);
     myParking.CarAdd(car2);
     myParking.CarAdd(car3);
-    myParking.CarAdd("Number4");
+    myParking.CarAdd("Number4",5);
     myParking.CarSub(1);
     var allCar = myParking.GetAllCars();
 

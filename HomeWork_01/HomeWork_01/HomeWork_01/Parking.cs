@@ -61,7 +61,7 @@ namespace HomeWork_01
         /// <returns></returns>
         public void CarAdd(Car newCar)
         {
-            if (_cars.Count < 100)
+            if (_cars.Count < _capacity)
             {
                 newCar.DateAraive = DateTime.Now;
                 _cars.Add(newCar);
@@ -78,10 +78,10 @@ namespace HomeWork_01
         /// Id auto  increment
         /// </summary>
         /// <param name="number"></param>
-        public void CarAdd(string number )
+        public void CarAdd(string number,int id)
         {
-            var newCar = new Car(_cars.Count + 1,"NoType", number);
-            if (_cars.Count < 100)
+            var newCar = new Car(id,"NoType", number);
+            if (_cars.Count < _capacity)
             {
                 newCar.DateAraive = DateTime.Now;
                 _cars.Add(newCar);
@@ -165,6 +165,7 @@ namespace HomeWork_01
                    $" left parking {car.DateOfDeparture}");
             }
             _messege.SendMessege("Parking closed, good bye !");
+            _cars.Clear();
         }
     }
 }
