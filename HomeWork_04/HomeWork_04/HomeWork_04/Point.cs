@@ -29,7 +29,7 @@ namespace HomeWork_04
         public int Y
         {
             get => _y;
-            set => _y = value < 0 ? 0 : value;
+            set => _y = value;
         }
         public Point(int x, int y)
         {
@@ -48,6 +48,7 @@ namespace HomeWork_04
             var catet_1 = firstPoint.X > secondPoint.X ? firstPoint.X - secondPoint.X : secondPoint.X - firstPoint.X;
             var catet_2 = firstPoint.Y > secondPoint.Y ? firstPoint.Y - secondPoint.Y : secondPoint.Y - firstPoint.Y;
             return (int)Math.Round(Math.Sqrt(Math.Pow(catet_1, 2) + Math.Pow(catet_2, 2)));
+
         }
         /// <summary>
         /// Returns the distance between two objects (this.Obj type Point and input Obj type Point )
@@ -60,7 +61,7 @@ namespace HomeWork_04
             var catet_2 = _y > secondPoint.Y ? _y - secondPoint.Y : secondPoint.Y - _y;
             return (int)Math.Round(Math.Sqrt(Math.Pow(catet_1, 2) + Math.Pow(catet_2, 2)));
         }
-       
+
     }
 }
 
