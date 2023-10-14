@@ -19,7 +19,7 @@ namespace HomeWork_04
         public int X
         {
             get => _x;
-            set => _x = value < 0 ? 0 : value;
+            set => _x = value;
         }
         /// <summary>
         /// <summary>
