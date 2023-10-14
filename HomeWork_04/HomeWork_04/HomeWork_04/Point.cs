@@ -13,8 +13,7 @@ namespace HomeWork_04
         private int _y;
         public static int CountInstanse;
         /// <summary>
-        /// Input  X coordinate 0 - 2,147,483,647 
-        /// if input minus value automatic set default value = 0;
+        /// Input  X coordinate 
         /// </summary>
         public int X
         {
@@ -23,8 +22,7 @@ namespace HomeWork_04
         }
         /// <summary>
         /// <summary>
-        /// Input  Y coordinate 0 - 2,147,483,647 
-        /// if input minus value automatic set default value = 0;
+        /// Input  Y coordinate
         /// </summary>
         public int Y
         {
