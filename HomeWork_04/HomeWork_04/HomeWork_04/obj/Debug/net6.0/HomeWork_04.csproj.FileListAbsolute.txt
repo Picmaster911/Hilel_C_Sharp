@@ -1,0 +1,15 @@
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\bin\Debug\net6.0\HomeWork_04.exe
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\bin\Debug\net6.0\HomeWork_04.deps.json
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\bin\Debug\net6.0\HomeWork_04.runtimeconfig.json
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\bin\Debug\net6.0\HomeWork_04.dll
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\bin\Debug\net6.0\HomeWork_04.pdb
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\obj\Debug\net6.0\HomeWork_04.csproj.AssemblyReference.cache
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\obj\Debug\net6.0\HomeWork_04.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\obj\Debug\net6.0\HomeWork_04.AssemblyInfoInputs.cache
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\obj\Debug\net6.0\HomeWork_04.AssemblyInfo.cs
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\obj\Debug\net6.0\HomeWork_04.csproj.CoreCompileInputs.cache
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\obj\Debug\net6.0\HomeWork_04.dll
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\obj\Debug\net6.0\refint\HomeWork_04.dll
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\obj\Debug\net6.0\HomeWork_04.pdb
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\obj\Debug\net6.0\HomeWork_04.genruntimeconfig.cache
+C:\Users\picma\Desktop\c#\HomeWork_04\HomeWork_04\HomeWork_04\obj\Debug\net6.0\ref\HomeWork_04.dll
