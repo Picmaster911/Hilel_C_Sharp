@@ -1,0 +1,14 @@
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\bin\Debug\net6.0\HomeWork_09.exe
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\bin\Debug\net6.0\HomeWork_09.deps.json
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\bin\Debug\net6.0\HomeWork_09.runtimeconfig.json
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\bin\Debug\net6.0\HomeWork_09.dll
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\bin\Debug\net6.0\HomeWork_09.pdb
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\obj\Debug\net6.0\HomeWork_09.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\obj\Debug\net6.0\HomeWork_09.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\obj\Debug\net6.0\HomeWork_09.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\obj\Debug\net6.0\HomeWork_09.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\obj\Debug\net6.0\HomeWork_09.dll
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\obj\Debug\net6.0\refint\HomeWork_09.dll
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\obj\Debug\net6.0\HomeWork_09.pdb
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\obj\Debug\net6.0\HomeWork_09.genruntimeconfig.cache
+C:\Users\Lenovo\Desktop\C\HomeWork_09\HomeWork_09\HomeWork_09\obj\Debug\net6.0\ref\HomeWork_09.dll
