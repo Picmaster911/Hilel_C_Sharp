@@ -25,16 +25,9 @@ namespace HomeWork_09
             _amount = amount;
         }
 
-        public async void StartEating()
+        public void ActionEndFeed()
         {
-            while (true)
-            {
-                _amount -= 1;
-                await Task.Delay(1000);
-                if (_amount == 0)
-                    FoodFinished?.Invoke(FeedName, this);
-            }
+            FoodFinished?.Invoke(FeedName, this);
         }
     }
-
 }
