@@ -8,7 +8,7 @@ namespace HomeWork_06
 {
    public abstract class CupBase
     {
-      public void Stir () 
+        public void Stir () 
         {
             Console.WriteLine ("Coffe is  Stiring");
         }
