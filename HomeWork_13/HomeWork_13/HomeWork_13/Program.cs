@@ -32,12 +32,12 @@ using (var myDB = new AppDbContext())
                 Key = movie.Key,
                 Name = movie.Value,
                 ForAdult = forAdult
-            });
-            myDB.SaveChanges();
+            });         
         }    
     }
     AddToDb(_ordinaryMovies, false);
     AddToDb(_ordinaryMovies, true);
+    myDB.SaveChanges();
 
     var ordinaryMovies = new Dictionary<int, string>();
     var onlyAdultMovies = new Dictionary<int, string>();
