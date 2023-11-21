@@ -13,6 +13,7 @@ namespace HomeWork_13
     
         public AppDbContext ()
         {
+            this.Database.EnsureDeleted();
             this.Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
