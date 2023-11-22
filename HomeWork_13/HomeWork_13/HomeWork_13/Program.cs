@@ -1,5 +1,7 @@
 ﻿using HomeWork_13;
 using Microsoft.EntityFrameworkCore;
+using System.Numerics;
+using System.Runtime.Intrinsics.Arm;
 using System.Xml.Linq;
 
 Dictionary<int, string> _ordinaryMovies = new Dictionary<int, string>()
@@ -32,11 +34,11 @@ using (var myDB = new AppDbContext())
                 Key = movie.Key,
                 Name = movie.Value,
                 ForAdult = forAdult
-            });         
-        }    
+            });
+        }
     }
     AddToDb(_ordinaryMovies, false);
-    AddToDb(_ordinaryMovies, true);
+    AddToDb(_onlyAdultMovies, true);
     myDB.SaveChanges();
 
     var ordinaryMovies = new Dictionary<int, string>();
@@ -46,7 +48,7 @@ using (var myDB = new AppDbContext())
 
     foreach (var movie in allMovies)
     {
-        if (movie.ForAdult) 
+        if (movie.ForAdult)
         {
             onlyAdultMovies.Add(movie.Key, movie.Name);
         }
@@ -62,4 +64,22 @@ using (var myDB = new AppDbContext())
     {
         Console.WriteLine(library);
     }
+    var movieDell = myDB.Movies.Where(m => m.Name == "NYAD").FirstOrDefault();
+
+    if (movieDell != null)
+    {
+        myDB.Movies.Remove(movieDell);
+        myDB.SaveChanges();
+    }
+
+    var movieForUpdate = myDB.Movies.Where(x => x.Name == "XXX").FirstOrDefault();
+
+    if (movieForUpdate != null)
+    {
+        movieForUpdate.Name = "New XXX";
+        myDB.SaveChanges();
+    }
+
+    allMovies = myDB.Movies;
+
 }
