@@ -1,0 +1,15 @@
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\bin\Debug\net6.0\HomeWork_15.exe
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\bin\Debug\net6.0\HomeWork_15.deps.json
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\bin\Debug\net6.0\HomeWork_15.runtimeconfig.json
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\bin\Debug\net6.0\HomeWork_15.dll
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\bin\Debug\net6.0\HomeWork_15.pdb
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\obj\Debug\net6.0\HomeWork_15.csproj.AssemblyReference.cache
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\obj\Debug\net6.0\HomeWork_15.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\obj\Debug\net6.0\HomeWork_15.AssemblyInfoInputs.cache
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\obj\Debug\net6.0\HomeWork_15.AssemblyInfo.cs
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\obj\Debug\net6.0\HomeWork_15.csproj.CoreCompileInputs.cache
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\obj\Debug\net6.0\HomeWork_15.dll
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\obj\Debug\net6.0\refint\HomeWork_15.dll
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\obj\Debug\net6.0\HomeWork_15.pdb
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\obj\Debug\net6.0\HomeWork_15.genruntimeconfig.cache
+C:\Users\picma\Desktop\c#\HomeWork_15\HomeWork_15\HomeWork_15\obj\Debug\net6.0\ref\HomeWork_15.dll

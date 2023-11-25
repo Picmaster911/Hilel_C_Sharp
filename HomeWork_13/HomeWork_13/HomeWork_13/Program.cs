@@ -58,7 +58,7 @@ using (var myDB = new AppDbContext())
         }
     }
 
-    var libraryMovies = new MovieLibrary(ordinaryMovies, onlyAdultMovies);
+    var libraryMovies = new MovieLibrary(_ordinaryMovies, onlyAdultMovies);
 
     foreach (var library in libraryMovies)
     {
