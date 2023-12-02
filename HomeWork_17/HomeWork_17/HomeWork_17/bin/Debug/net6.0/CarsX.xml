@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Cars>
+  <Car>
+    <Name>Tesla</Name>
+    <Number>213123</Number>
+    <Price>45235</Price>
+  </Car>
+  <Car>
+    <Name>BMW</Name>
+    <Number>423432</Number>
+    <Price>3200</Price>
+  </Car>
+  <Car>
+    <Name>Hynday</Name>
+    <Number>432432</Number>
+    <Price>3456</Price>
+  </Car>
+  <Car>
+    <Name>Honda</Name>
+    <Number>6456456</Number>
+    <Price>3200</Price>
+  </Car>
+  <Car>
+    <Name>Skoda</Name>
+    <Number>7657567</Number>
+    <Price>3200</Price>
+  </Car>
+  <Car>
+    <Name>TeslaMX</Name>
+    <Number>5345345</Number>
+    <Price>64564</Price>
+  </Car>
+</Cars>
