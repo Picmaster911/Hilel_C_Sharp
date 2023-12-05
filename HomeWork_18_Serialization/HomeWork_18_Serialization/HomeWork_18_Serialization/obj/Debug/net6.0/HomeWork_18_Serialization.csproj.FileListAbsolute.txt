@@ -1,0 +1,17 @@
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\bin\Debug\net6.0\HomeWork_18_Serialization.exe
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\bin\Debug\net6.0\HomeWork_18_Serialization.deps.json
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\bin\Debug\net6.0\HomeWork_18_Serialization.runtimeconfig.json
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\bin\Debug\net6.0\HomeWork_18_Serialization.dll
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\bin\Debug\net6.0\HomeWork_18_Serialization.pdb
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\obj\Debug\net6.0\HomeWork_18_Serialization.csproj.AssemblyReference.cache
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\obj\Debug\net6.0\HomeWork_18_Serialization.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\obj\Debug\net6.0\HomeWork_18_Serialization.AssemblyInfoInputs.cache
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\obj\Debug\net6.0\HomeWork_18_Serialization.AssemblyInfo.cs
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\obj\Debug\net6.0\HomeWork_18_Serialization.csproj.CoreCompileInputs.cache
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\obj\Debug\net6.0\HomeWork_18_Serialization.csproj.CopyComplete
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\obj\Debug\net6.0\HomeWork_18_Serialization.dll
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\obj\Debug\net6.0\refint\HomeWork_18_Serialization.dll
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\obj\Debug\net6.0\HomeWork_18_Serialization.pdb
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\obj\Debug\net6.0\HomeWork_18_Serialization.genruntimeconfig.cache
+C:\Users\picma\Desktop\c#\HomeWork_18_Serialization\HomeWork_18_Serialization\HomeWork_18_Serialization\obj\Debug\net6.0\ref\HomeWork_18_Serialization.dll
