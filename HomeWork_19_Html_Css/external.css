@@ -1,0 +1,46 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box {
+  flex-direction: column;
+}
+
+.text {
+  max-width: 1200px;
+  text-align: left;
+}
+
+.sample {
+  font: 20px 'AmstelvarAlpha', sans-serif;
+  font-style: oblique 23deg;
+}
+
+h1 {
+  color: rgb(247, 11, 11);
+}
+
+.myli {
+  flex-direction: column;
+  display: flex;
+  max-width: 1200px;
+  text-align: left;
+}
+
+.myli2 {
+  flex-direction: column;
+  display: flex;
+  max-width: 1200px;
+  text-align: left;
+  align-items: center;
+}
+.button {
+  font-size:100%;
+  width:  130px;
+  height: 50px;
+  top:50%;
+  background-color:#1111ec;
+  color: #fff;
+}
