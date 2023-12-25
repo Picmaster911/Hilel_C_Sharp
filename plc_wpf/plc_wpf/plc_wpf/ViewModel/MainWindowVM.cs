@@ -15,9 +15,8 @@ namespace plc_wpf.ViewModel
     class MainWindowVM: ViewModelBase
     {
 
-       public  MainWindowVM( IPlcDataProvider plcDataProvider)
+       public  MainWindowVM()
         {
-            _plcDataProvider = plcDataProvider;
             #region Commands
             OpenAddNewConectionWindowCommand = new LambdaCommand(
                 OnOpenAddNewConectWinCommandExecuted,
@@ -29,21 +28,8 @@ namespace plc_wpf.ViewModel
         private static List<PLC_Conection> conections = DataWorker.AllConections();
 
         private ObservableCollection<PLC_Conection> _allConections = new ObservableCollection<PLC_Conection>(conections);
-        public ObservableCollection<PLC_Conection> AllConections { get; } = new();
+        public ObservableCollection <PLC_Conection> AllConections { get; } = new(conections);
 
-        public async Task LoadAsync ()
-        {
-            if (AllConections.Any())
-            {
-                return;
-            }
-            var allConection = await _plcDataProvider.GetConectionsAsync();
-            if (allConection != null)
-            {
-                allConection.ToList().ForEach(conection => AllConections.Add(conection));
-            }
-           
-        }
         private string _title = "All Plc conection";
         private readonly IPlcDataProvider _plcDataProvider;
 
@@ -58,7 +44,10 @@ namespace plc_wpf.ViewModel
 
         private void OnOpenAddNewConectWinCommandExecuted(object p)
         {
-            AddNewPLCconectionsWindow addNewPLCconectionsWindow = new AddNewPLCconectionsWindow();
+            AddNewPLCconectionsWindow addNewPLCconectionsWindow = new AddNewPLCconectionsWindow()
+            {
+                DataContext = new AddNewPLCconectionsWindowVM()
+            };
             addNewPLCconectionsWindow.Owner = Application.Current.MainWindow;
             addNewPLCconectionsWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             addNewPLCconectionsWindow.ShowDialog();

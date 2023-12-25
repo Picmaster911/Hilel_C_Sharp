@@ -4,19 +4,19 @@ using Microsoft.Extensions.DependencyInjection;
 
 var services = new ServiceCollection();
 var goLoop = true;
-services.AddSingleton<IRemoteData, HttpModels>();
+services.AddSingleton<IRemoteData, HttpDataProvider>();
 services.AddSingleton<ILoger, LogerToConsole>();
 services.AddTransient<DataWorker>();
 services.AddHttpClient();
 using var serviceProvider = services.BuildServiceProvider();
 
 //var httpClientFactory = serviceProvider.GetRequiredService<IHttpClientFactory>(); - Для меня чтоб не забыть
-var models = serviceProvider.GetRequiredService<IRemoteData>();
+var httpClient = serviceProvider.GetRequiredService<IRemoteData>();
 var dataWorker = serviceProvider.GetRequiredService<DataWorker>();
 
 while (goLoop)
 {
-    var allCurencyFromServer = await models.GetData();
+    var allCurencyFromServer = await httpClient.GetData();
     dataWorker.AddToDb(allCurencyFromServer);
     Thread.Sleep(2000);
 }

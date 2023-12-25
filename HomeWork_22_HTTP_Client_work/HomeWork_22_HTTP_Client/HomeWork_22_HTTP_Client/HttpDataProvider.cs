@@ -3,10 +3,10 @@ using HomeWork_22_HTTP_Client.Models;
 
 namespace HomeWork_22_HTTP_Client
 {
-    class HttpModels : IRemoteData
+    class HttpDataProvider : IRemoteData
     {
         private IHttpClientFactory _httpClientFactory;
-        public HttpModels(IHttpClientFactory httpClientFactory)
+        public HttpDataProvider(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }

@@ -16,13 +16,8 @@ namespace plc_wpf.View
         public MainWindow()
         {
             InitializeComponent();
-            _viewModel = new MainWindowVM(new DataWorker());
+            _viewModel = new MainWindowVM();
             DataContext = _viewModel;
-            Loaded += ConectionsLoad;
-        }
-        private async void ConectionsLoad (object sender, RoutedEventArgs e)
-        {
-            await _viewModel.LoadAsync();
         }
     }
 }

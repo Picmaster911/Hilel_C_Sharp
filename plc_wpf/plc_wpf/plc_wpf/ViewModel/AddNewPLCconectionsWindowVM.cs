@@ -41,6 +41,7 @@ namespace plc_wpf.ViewModel
         private void OnAddNewConectWinCommandExecuted(object p)
         {
             DataWorker.CreatePlc(PlcName, IpAddress, PlcTypeSelected, Slot, Rack);
+           
         }
         private bool CanAddNewConectWinCommandExecuted(object p)
         {
