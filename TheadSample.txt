@@ -1,0 +1,14 @@
+var count = 5;
+var msg = "Hello";
+var timeout = 150;
+
+new Thread(()=> PrintMrtod(msg,count,timeout)).Start();
+
+void PrintMrtod(string msg, int count, int timeout)
+{
+    for (int i = 0; i < count; i++)
+    {
+        Console.WriteLine(msg);
+        Thread.Sleep(timeout);
+    }
+}

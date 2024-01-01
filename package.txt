@@ -3,4 +3,6 @@ Newtonsoft.Json
 DevExpressMvvm
 Microsoft.EntityFrameworkCore.Sqlite 
 Microsoft.Extensions.Http
+-----------------------------
+Microsoft.Extensions.Hosting
 Microsoft.Extensions.DependencyInjection 
