@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace plc_wpf.ViewModel
 {
-    class ViewModelBase : INotifyPropertyChanged
+   public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 

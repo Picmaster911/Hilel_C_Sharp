@@ -1,4 +1,5 @@
-﻿using HomeWork_22_HTTP_Client.Models;
+﻿using HomeWork_22_HTTP_Client;
+using HomeWork_22_HTTP_Client.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,9 @@ namespace Test_Http_WPF.ViewModel
     {
         public HttpCientViewModel HttpCientVM { get; }
         public CurrencyChartViewModel CurrencyChartVM { get; }
-        public MainWindowViewModel (HttpCientViewModel httpCientVM,DataWorker dataworker)
+        public MainWindowViewModel (HttpCientViewModel httpCientVM,DataWorker dataworker, IRemoteData HttpClient)
         {
-            CurrencyChartVM = CurrencyChartViewModel.LoadVW (dataworker);
+            CurrencyChartVM = CurrencyChartViewModel.LoadVW (dataworker, HttpClient);
             HttpCientVM = httpCientVM;
             
         }

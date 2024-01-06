@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "plc_wpf", "plc_wpf\plc_wpf.csproj", "{773D312E-5DF8-4F70-869B-9C0DD4877FAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "plc_wpf", "plc_wpf\plc_wpf.csproj", "{773D312E-5DF8-4F70-869B-9C0DD4877FAE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12E8CC18-7272-4F15-AF0D-3FAC89C4BFE3} = {12E8CC18-7272-4F15-AF0D-3FAC89C4BFE3}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "plc_modules", "..\plc_modules\plc_modules\plc_modules\plc_modules.csproj", "{12E8CC18-7272-4F15-AF0D-3FAC89C4BFE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{773D312E-5DF8-4F70-869B-9C0DD4877FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{773D312E-5DF8-4F70-869B-9C0DD4877FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{773D312E-5DF8-4F70-869B-9C0DD4877FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12E8CC18-7272-4F15-AF0D-3FAC89C4BFE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12E8CC18-7272-4F15-AF0D-3FAC89C4BFE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12E8CC18-7272-4F15-AF0D-3FAC89C4BFE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12E8CC18-7272-4F15-AF0D-3FAC89C4BFE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

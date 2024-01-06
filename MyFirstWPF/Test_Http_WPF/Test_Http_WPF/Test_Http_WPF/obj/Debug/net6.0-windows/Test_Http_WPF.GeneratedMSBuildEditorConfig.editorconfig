@@ -10,3 +10,5 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Test_Http_WPF
 build_property.ProjectDir = C:\Users\picma\Desktop\c#\MyFirstWPF\Test_Http_WPF\Test_Http_WPF\Test_Http_WPF\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

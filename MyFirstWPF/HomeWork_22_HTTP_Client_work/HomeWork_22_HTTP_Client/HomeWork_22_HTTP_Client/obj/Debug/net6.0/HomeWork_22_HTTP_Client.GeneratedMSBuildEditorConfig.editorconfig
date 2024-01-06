@@ -9,3 +9,5 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HomeWork_22_HTTP_Client
 build_property.ProjectDir = C:\Users\picma\Desktop\c#\MyFirstWPF\HomeWork_22_HTTP_Client_work\HomeWork_22_HTTP_Client\HomeWork_22_HTTP_Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

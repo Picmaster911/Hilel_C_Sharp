@@ -11,13 +11,9 @@ namespace plc_wpf.View
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindowVM _viewModel;
-
         public MainWindow()
         {
             InitializeComponent();
-            _viewModel = new MainWindowVM();
-            DataContext = _viewModel;
         }
     }
 }

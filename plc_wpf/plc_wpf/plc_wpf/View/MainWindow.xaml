@@ -4,40 +4,120 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:cmd="clr-namespace:plc_wpf.Infrastructure.Commands"   
-        xmlns:vm="clr-namespace:plc_wpf.ViewModel"       
+        xmlns:vm="clr-namespace:plc_wpf.ViewModel" xmlns:view="clr-namespace:plc_wpf.View"
         mc:Ignorable="d"
         Title="{Binding Path=Title}" 
-        Height="450"
+        Height="680"
         Width="800">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="210*"/>
-            <RowDefinition Height="173*"/>
+            <RowDefinition Height="280*"/>
+            <RowDefinition Height="293*"/>
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <TabControl Grid.Row="0" Grid.RowSpan="2">
+            <TabItem Name="Plc">
+                <TabItem.Header>
+                    <TextBlock Text="Plc"/>
+                </TabItem.Header>
+                <Grid>
+                    <ListBox x:Name="phonesList" 
+                             DataContext="{Binding PlcComponentViewModel}"
+                             ItemsSource="{Binding AllPlcColection }"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                             ScrollViewer.VerticalScrollBarVisibility="Visible">
+                        
+                        <ListBox.ItemTemplate>
+                            <DataTemplate >
+                                <Grid Width="200"
+                                      Height="140">
+                                    <StackPanel>
+                                        <GroupBox Header="PLC"
+                                              BorderBrush="#FF1B2E7D"
+                                              Grid.Column="0" 
+                                              Margin="5,0,5,0" Grid.ColumnSpan="2">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="Name PLC" Grid.ColumnSpan="3" HorizontalAlignment="Center"></TextBlock>
+                                                <TextBlock Text="IP" Grid.Row="1"></TextBlock>
+                                                <TextBlock Text="{Binding IpAdress}" Grid.Row="1"  Grid.Column="1"></TextBlock>
+                                                <TextBlock Text="Status" Grid.Row="2"></TextBlock>
+                                                <TextBlock Text="{Binding Enable}" Grid.Row="2" Grid.Column="1"></TextBlock>
+                                                <TextBlock Text="Error" Grid.Row="3"></TextBlock>
+                                                <TextBlock Text="{Binding ErroConection }" Grid.Row="3" Grid.Column="1" ></TextBlock>
+                                                <TextBlock Text="Conection" Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="3"></TextBlock>
+                                                <Button Margin="1" Grid.Row="5" Grid.Column="0" Content="On"
+                                              Command="{Binding DataContext.OnConection,
+                                                RelativeSource={RelativeSource FindAncestor,
+                                                AncestorType={x:Type ListBox}}}"
+                                                    CommandParameter="{Binding}"/>
+                                                <Button Margin="1" Grid.Row="5" Grid.Column="3" Content="Off" />
+                                            </Grid>
+                                        </GroupBox>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                </Grid>
+            </TabItem>
             <TabItem Name="Connections">
                 <TabItem.Header>
                     <TextBlock Text="Connections"/>
                 </TabItem.Header>
-                <ListView ItemsSource="{Binding Path=AllConections}">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=PlcName}"/>
-                            <GridViewColumn Header="IP adress" DisplayMemberBinding="{Binding Path=IpAddress}"/>
-                            <GridViewColumn Header="Type PLC" DisplayMemberBinding="{Binding Path=PlcType}" />
-                            <GridViewColumn Header="Slot" DisplayMemberBinding="{Binding Path=Slot}" />
-                            <GridViewColumn Header="Rack" DisplayMemberBinding="{Binding Path=Rack}"/>
-                        </GridView>
-                    </ListView.View>
-
-                </ListView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" ItemsSource="{Binding Path=AllConections}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=PlcName}"/>
+                                <GridViewColumn Header="IP adress" DisplayMemberBinding="{Binding Path=IpAddress}"/>
+                                <GridViewColumn Header="Type PLC" DisplayMemberBinding="{Binding Path=PlcType}" />
+                                <GridViewColumn Header="Slot" DisplayMemberBinding="{Binding Path=Slot}" />
+                                <GridViewColumn Header="Rack" DisplayMemberBinding="{Binding Path=Rack}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
             </TabItem>
             <TabItem Name="Tags">
                 <TabItem.Header>
                     <TextBlock Text="Tags"/>
                 </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                </Grid>
             </TabItem>
             <TabItem Name="Charts">
                 <TabItem.Header>
@@ -50,20 +130,5 @@
                 </TabItem.Header>
             </TabItem>
         </TabControl>
-        <StackPanel
-            Grid.Row="2" 
-            Orientation="Horizontal"
-            HorizontalAlignment="Left" 
-            Margin="300,0,0,0">
-            <Button
-                VerticalAlignment="Center"
-                Height="52"
-                Width="100" 
-                Content="New PLC"
-                Command="{Binding OpenAddNewConectionWindowCommand}"/>
-            <TextBox
-                Width="100"
-                Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"/>
-        </StackPanel>
     </Grid>
 </Window>

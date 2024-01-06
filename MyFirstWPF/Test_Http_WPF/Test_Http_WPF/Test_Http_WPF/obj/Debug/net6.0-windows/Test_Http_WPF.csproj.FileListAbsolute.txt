@@ -223,3 +223,4 @@ C:\Users\picma\Desktop\c#\MyFirstWPF\Test_Http_WPF\Test_Http_WPF\Test_Http_WPF\o
 C:\Users\picma\Desktop\c#\MyFirstWPF\Test_Http_WPF\Test_Http_WPF\Test_Http_WPF\obj\Debug\net6.0-windows\Test_Http_WPF.pdb
 C:\Users\picma\Desktop\c#\MyFirstWPF\Test_Http_WPF\Test_Http_WPF\Test_Http_WPF\obj\Debug\net6.0-windows\Test_Http_WPF.genruntimeconfig.cache
 C:\Users\picma\Desktop\c#\MyFirstWPF\Test_Http_WPF\Test_Http_WPF\Test_Http_WPF\obj\Debug\net6.0-windows\ref\Test_Http_WPF.dll
+C:\Users\picma\Desktop\c#\MyFirstWPF\Test_Http_WPF\Test_Http_WPF\Test_Http_WPF\obj\Debug\net6.0-windows\Test_Http_WPF.sourcelink.json

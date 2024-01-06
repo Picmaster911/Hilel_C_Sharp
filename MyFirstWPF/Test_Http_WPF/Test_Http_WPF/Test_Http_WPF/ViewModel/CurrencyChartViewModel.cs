@@ -1,10 +1,12 @@
-﻿using HomeWork_22_HTTP_Client.Models;
+﻿using HomeWork_22_HTTP_Client;
+using HomeWork_22_HTTP_Client.Models;
 using LiveCharts;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -16,15 +18,17 @@ namespace Test_Http_WPF.ViewModel
     {
         public IEnumerable <CurrencyAndTime> CurrencyChartColection { get; set; }   
         private DataWorker _dataworker;
+        private IRemoteData _httpclient;
         public ChartValues <double> PriceDataUsd { get; set; }
         public ChartValues<double> PriceDataEuro { get; set; }
         public SeriesCollection SeriesCollection { get; set; }  
         public Func<double, string> YFormatter { get; set; }
         public string [] DateGetData { get; set; }
-        public CurrencyChartViewModel(DataWorker dataworker)
+        public CurrencyChartViewModel(DataWorker dataworker, IRemoteData httpclient)
         {
             _dataworker = dataworker;
-
+            _httpclient = httpclient;
+            _httpclient.EventRequestLight += CalllGetVewData;
             #region Commands
             GetFromDB = new LambdaCommand(
                 OnGetFromDBCommandExecuted,
@@ -33,9 +37,9 @@ namespace Test_Http_WPF.ViewModel
             #endregion
         }
 
-        public static CurrencyChartViewModel LoadVW ( DataWorker dataworker, Action<Task> onLoadet = null)
-        {
-            CurrencyChartViewModel viewModel = new CurrencyChartViewModel(dataworker);
+        public static CurrencyChartViewModel LoadVW (DataWorker dataworker, IRemoteData httpclient, Action<Task> onLoadet = null)
+        {            
+            CurrencyChartViewModel viewModel = new CurrencyChartViewModel(dataworker, httpclient);
             viewModel.LoadDataWromDB().ContinueWith( t=> onLoadet?.Invoke(t));
             return viewModel;
         }
@@ -69,6 +73,11 @@ namespace Test_Http_WPF.ViewModel
                 },
             };
             YFormatter = value => value.ToString("C");
+        }
+
+        void CalllGetVewData(List<Currency> respone)
+        {
+            Task.Run(LoadDataWromDB);
         }
         #region Commands
         #region OnEnableHttpCommand

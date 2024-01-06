@@ -227,3 +227,4 @@ C:\Users\picma\Desktop\c#\MyFirstWPF\HomeWork_22_HTTP_Client_work\HomeWork_22_HT
 C:\Users\picma\Desktop\c#\MyFirstWPF\HomeWork_22_HTTP_Client_work\HomeWork_22_HTTP_Client\HomeWork_22_HTTP_Client\obj\Debug\net6.0\HomeWork_22_HTTP_Client.pdb
 C:\Users\picma\Desktop\c#\MyFirstWPF\HomeWork_22_HTTP_Client_work\HomeWork_22_HTTP_Client\HomeWork_22_HTTP_Client\obj\Debug\net6.0\HomeWork_22_HTTP_Client.genruntimeconfig.cache
 C:\Users\picma\Desktop\c#\MyFirstWPF\HomeWork_22_HTTP_Client_work\HomeWork_22_HTTP_Client\HomeWork_22_HTTP_Client\obj\Debug\net6.0\ref\HomeWork_22_HTTP_Client.dll
+C:\Users\picma\Desktop\c#\MyFirstWPF\HomeWork_22_HTTP_Client_work\HomeWork_22_HTTP_Client\HomeWork_22_HTTP_Client\obj\Debug\net6.0\HomeWork_22_HTTP_Client.sourcelink.json

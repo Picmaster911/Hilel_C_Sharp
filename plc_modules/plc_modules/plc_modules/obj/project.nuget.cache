@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "xj5dWpmoZrb8d7IwxZcwJeFMP9VtGU4XplxoYTooDcTCs23aZrvSffQz2OUaBxXMvIhYcHzLz0VLEcm8AP0IbA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\picma\\Desktop\\c#\\plc_modules\\plc_modules\\plc_modules\\plc_modules.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\picma\\.nuget\\packages\\s7netplus\\0.20.0\\s7netplus.0.20.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<Movies>
-	<Movie genre="comedy">Office Space</Movie>
-	<Movie genre="action">John Wick</Movie>
-	<Movie genre="action">Jurassic Park</Movie>
-</Movies>

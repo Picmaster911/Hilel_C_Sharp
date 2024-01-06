@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace plc_wpf.Model
 {
-    public class DataWorker : IPlcDataProvider
+    public class DataWorker 
     {
         public static List<PLC_Conection> AllConections()
         {
@@ -83,7 +83,7 @@ namespace plc_wpf.Model
                 return "PLCnot found in DB";
             }
         }
-        public async Task<IEnumerable<PLC_Conection>?> GetConectionsAsync()
+        public async Task<IEnumerable <PLC_Conection>?> GetConectionsAsync()
         {
             using (AppDbContext db = new AppDbContext())
             {
