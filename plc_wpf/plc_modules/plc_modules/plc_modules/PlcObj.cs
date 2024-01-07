@@ -68,7 +68,7 @@ namespace plc_modules
             Task backgroundTask = GetData(cancelTokenSource.Token);
         }
 
-        async Task PingPlc(CancellationToken cancellationToken)
+        async Task PingPlc (CancellationToken cancellationToken)
         {
             await Task.Run((Func<Task?>)(async () =>
             {

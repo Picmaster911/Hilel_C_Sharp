@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="plc_wpf.View.PlcConectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:plc_wpf.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        <ListView  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" ItemsSource="{Binding AllConections}" SelectedItem="{Binding SelectedItem}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="220" DisplayMemberBinding="{Binding Path=PlcName}"/>
+                    <GridViewColumn Header="IP adress" DisplayMemberBinding="{Binding Path=IpAddress}"/>
+                    <GridViewColumn Header="Type PLC" DisplayMemberBinding="{Binding Path=PlcType}" />
+                    <GridViewColumn Header="Slot" DisplayMemberBinding="{Binding Path=Slot}" />
+                    <GridViewColumn Header="Rack" DisplayMemberBinding="{Binding Path=Rack}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Background="#FFA0ABCC">
+            <GroupBox Header="Connection seting" Margin="5" Padding="5">
+                <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="30"/>
+                        <RowDefinition  Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.ColumnSpan="2"
+                       HorizontalAlignment="Center">Conections </Label>
+                <StackPanel Grid.Column="0" Grid.Row="1">
+                    <Label  Height="31" Content="Name Plc"/>
+                    <Label Height="31"  Content="IP adress" />
+                    <Label Height="31" Content="Type Plc"/>
+                    <Label Height="31"  Content="Slot" />
+                    <Label Height="31" Content="Rack"/>
+                    <Label Height="31" Content="Auto connect" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="1">
+                        <TextBox Height="24" Margin="0,5,3,0" Text="{Binding NamePLC}"></TextBox>
+                        <TextBox Height="24" Margin="0,5,3,0" Text="{Binding IpAdress}" ></TextBox>
+                        <TextBox Height="24" Margin="0,5,3,0" Text="{Binding TypePlc}"></TextBox>
+                        <TextBox Height="24" Margin="0,5,3,0" Text="{Binding Slot}" ></TextBox>
+                        <TextBox Height="24" Margin="0,5,3,0" Text="{Binding Rack}"></TextBox>
+                        <TextBox Height="24" Margin="0,4,3,0"></TextBox>
+                        <Button Margin="0,20,0,0" Content="Add Conection"
+                         Command="{Binding AddConection,
+                         RelativeSource={RelativeSource FindAncestor,
+                         AncestorType={x:Type ListView}}}"
+                         CommandParameter="{Binding}"/>
+                        <Button Command="{Binding DeleteConection}" Margin="0,2" Content="Delete Conection"/>
+                        <Button Margin="0,2" Content="Edite Conection"/>
+                    </StackPanel>
+            </Grid>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

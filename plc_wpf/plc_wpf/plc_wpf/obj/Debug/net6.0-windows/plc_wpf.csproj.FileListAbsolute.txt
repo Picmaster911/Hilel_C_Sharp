@@ -90,3 +90,5 @@ C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\bin\Debug\net6.0-windows\plc_m
 C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\bin\Debug\net6.0-windows\plc_modules.exe
 C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\bin\Debug\net6.0-windows\plc_modules.dll
 C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\bin\Debug\net6.0-windows\plc_modules.pdb
+C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\obj\Debug\net6.0-windows\View\PlcConectionView.g.cs
+C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\obj\Debug\net6.0-windows\View\PlcConectionView.baml

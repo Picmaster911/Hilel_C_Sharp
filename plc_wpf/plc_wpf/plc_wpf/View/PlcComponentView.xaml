@@ -8,10 +8,10 @@
              d:DesignHeight="200" d:DesignWidth="220">
     <Grid>
         <GroupBox
-     Header="PLC"
-            BorderBrush="Coral"
-     Grid.Column="0" 
-     Margin="5,0,5,0" Grid.ColumnSpan="2">
+             Header="PLC"
+             BorderBrush="Coral"
+             Grid.Column="0" 
+             Margin="5,0,5,0" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>

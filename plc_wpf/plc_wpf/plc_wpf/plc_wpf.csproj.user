@@ -13,6 +13,9 @@
     <Compile Update="View\PlcComponentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\PlcConectionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="View\AddNewPLCconectionsWindow.xaml">
@@ -22,6 +25,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\PlcComponentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PlcConectionView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

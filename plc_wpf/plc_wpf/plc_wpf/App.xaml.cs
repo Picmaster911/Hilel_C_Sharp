@@ -35,9 +35,11 @@ namespace plc_wpf
         {
             services.AddSingleton<MainWindow>();
             services.AddSingleton<MainWindowVM>();
+            
 
             services.AddSingleton<PlcComponentVM>();
-            
+            services.AddSingleton<PlcConectionVM>();
+
             services.AddTransient<DataWorker>();
             services.AddSingleton<FabricCreatorPlc>();
             
