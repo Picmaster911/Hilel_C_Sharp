@@ -38,8 +38,7 @@ namespace plc_wpf.ViewModel
         {
             var t = (PlcVM)p;
             t.IpAdress = "127.127.127.0";
-            t.Enable = true;
-            AllPlcColection.Add(new PlcVM(new PlcObj("test")));             
+            t.Enable = true;    
         }
         private bool CanOnConection(object p) => true;
         #endregion

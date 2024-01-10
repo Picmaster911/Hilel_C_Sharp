@@ -10,7 +10,7 @@ namespace plc_wpf.ViewModel
 {
    public class PlcVM: ViewModelBase
     {
-        private PlcObj _plc;
+        public PlcObj Plc;
 
         public bool _error;
 
@@ -19,12 +19,17 @@ namespace plc_wpf.ViewModel
         private string _ipAdress;
         public string IpAdress 
         {
-            get => _plc.IpAdress;
+            get => Plc.IpAdress;
             set
             {
                 _ipAdress = value;
                 OnPropertyChanged();
             }
+        }
+
+        public string PlcName
+        {
+            get => Plc.PlcName; 
         }
 
         public bool ErroConection
@@ -42,7 +47,7 @@ namespace plc_wpf.ViewModel
             get => _enable;
             set
             {
-                _plc.Enable = true;
+                Plc.Enable = true;
                 _enable = value;
                 OnPropertyChanged();
             }
@@ -63,8 +68,8 @@ namespace plc_wpf.ViewModel
         }
         public PlcVM(PlcObj plc)
         {
-            _plc = plc;
-            _plc.EventFromPLC += CallBackFromPLC;
+            Plc = plc;
+            Plc.EventFromPLC += CallBackFromPLC;
         }
 
         private void Blink(bool _requestLight)
@@ -74,8 +79,8 @@ namespace plc_wpf.ViewModel
 
         void CallBackFromPLC ()
         {
-            Enable = _plc.Enable;
-            ErroConection = _plc.ErroConection;
+            Enable = Plc.Enable;
+            ErroConection = Plc.ErroConection;
         }
     }
 }

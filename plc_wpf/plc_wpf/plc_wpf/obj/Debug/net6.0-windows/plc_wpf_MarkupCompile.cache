@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\App.xaml
-4-1207564598
+3-1463899150
 
-23-1936992080
+25-1679230542
 23629536442
-View\AddNewPLCconectionsWindow.xaml;View\MainWindow.xaml;View\PlcComponentView.xaml;View\PlcConectionView.xaml;
+View\MainWindow.xaml;View\PlcComponentView.xaml;View\PlcConectionView.xaml;
 
 False
 

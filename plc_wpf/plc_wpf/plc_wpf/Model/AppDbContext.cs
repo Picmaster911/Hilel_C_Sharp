@@ -14,9 +14,9 @@ namespace plc_wpf.Model
 
         public AppDbContext()
         {
-           // Database.Migrate();
-           //this.Database.EnsureDeleted();
-           //Database.EnsureCreated();
+          //  Database.EnsureDeleted();   // удаляем бд со старой схемой
+          //  Database.EnsureCreated();   // создаем бд с новой схемой
+                                        //Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

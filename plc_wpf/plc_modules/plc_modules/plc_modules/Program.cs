@@ -6,13 +6,13 @@ using S7.Net.Types;
 Console.WriteLine("Hello, World!");
 
 
-var plc = new PlcObj("192.168.0.10");
+//var plc = new PlcObj("192.168.0.10");
 
-plc.Enable = true;
-plc.DataForRequest.Add( new DataItem 
-{ DataType = DataType.DataBlock, DB = 1, StartByteAdr = 0, VarType = VarType.Int});
-plc.DataForRequest.Add(new DataItem
-{ DataType = DataType.DataBlock, DB = 1, StartByteAdr = 2, VarType = VarType.Int });
+//plc.Enable = true;
+//plc.DataForRequest.Add( new DataItem 
+//{ DataType = DataType.DataBlock, DB = 1, StartByteAdr = 0, VarType = VarType.Int});
+//plc.DataForRequest.Add(new DataItem
+//{ DataType = DataType.DataBlock, DB = 1, StartByteAdr = 2, VarType = VarType.Int });
 
 
 while (true)

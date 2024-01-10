@@ -37,9 +37,8 @@ namespace plc_wpf.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PlcType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PlcType")
+                        .HasColumnType("int");
 
                     b.Property<int>("Rack")
                         .HasColumnType("int");

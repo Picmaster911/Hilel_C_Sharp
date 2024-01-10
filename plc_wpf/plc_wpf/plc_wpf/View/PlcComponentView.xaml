@@ -5,36 +5,45 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:plc_wpf.View"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="220">
-    <Grid>
-        <GroupBox
-             Header="PLC"
-             BorderBrush="Coral"
-             Grid.Column="0" 
-             Margin="5,0,5,0" Grid.ColumnSpan="2">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="Name PLC" Grid.ColumnSpan="3" HorizontalAlignment="Center"></TextBlock>
-                <TextBlock Text="IP" Grid.Row="1"></TextBlock>
-                <TextBlock Text="IP" Grid.Row="1" Grid.Column="1"></TextBlock>
-                <TextBlock Text="Status" Grid.Row="2"></TextBlock>
-                <TextBlock Text="Error" Grid.Row="3"></TextBlock>
-                <TextBlock Text="Conection" Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="3"></TextBlock>
-                <Button Margin="1" Grid.Row="5" Grid.Column="0" Content="On" />
-                <Button Margin="1" Grid.Row="5" Grid.Column="3" Content="Off" />
-            </Grid>
-        </GroupBox>
+             d:DesignHeight="200" d:DesignWidth="250">
+    <Grid Width="220"
+      Height="180">
+        <StackPanel>
+            <GroupBox Header="PLC"
+              BorderBrush="#FF1B2E7D"
+              Grid.Column="0" 
+              Margin="5,0,5,0" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10"/>
+                        
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding PlcName }" Grid.ColumnSpan="3" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Height="26" Text="IP" Grid.Row="1"></TextBlock>
+                    <TextBlock Height="26" Text="{Binding IpAdress}" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="2" ></TextBlock>
+                    <TextBlock Height="26" Text="Status" Grid.Row="2"></TextBlock>
+                    <TextBlock Height="26" Text="{Binding Enable}" Grid.Row="2" Grid.Column="1"></TextBlock>
+                    <TextBlock Height="26" Text="Error" Grid.Row="3"></TextBlock>
+                    <TextBlock Height="26" Text="{Binding ErroConection }" Grid.Row="3" Grid.Column="1" ></TextBlock>
+                    <TextBlock Height="26" Text="Conection" Grid.Row="4"  ></TextBlock>
+                    <Button Margin="6" Grid.Row="4" Grid.Column="1" Content="On"
+              Command="{Binding DataContext.OnConection,
+                RelativeSource={RelativeSource FindAncestor,
+                AncestorType={x:Type ListBox}}}"
+                    CommandParameter="{Binding}"/>
+                    <Button Margin="6" Grid.Row="4" Grid.Column="3" Content="Off" />
+                </Grid>
+            </GroupBox>
+        </StackPanel>
     </Grid>
 </UserControl>

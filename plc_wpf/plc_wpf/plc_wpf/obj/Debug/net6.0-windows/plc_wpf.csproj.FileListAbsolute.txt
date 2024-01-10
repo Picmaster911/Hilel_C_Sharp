@@ -19,8 +19,6 @@ C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\obj\Debug\net6.0-windows\refin
 C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\obj\Debug\net6.0-windows\plc_wpf.pdb
 C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\obj\Debug\net6.0-windows\plc_wpf.genruntimeconfig.cache
 C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\obj\Debug\net6.0-windows\ref\plc_wpf.dll
-C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\obj\Debug\net6.0-windows\View\AddNewPLCconectionsWindow.g.cs
-C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\obj\Debug\net6.0-windows\View\AddNewPLCconectionsWindow.baml
 C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
 C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
 C:\Users\picma\Desktop\c#\plc_wpf\plc_wpf\plc_wpf\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll

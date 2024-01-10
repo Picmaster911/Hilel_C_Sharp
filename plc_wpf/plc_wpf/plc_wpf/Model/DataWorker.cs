@@ -1,10 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using S7.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Runtime.Intrinsics.Arm;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace plc_wpf.Model
@@ -29,7 +27,7 @@ namespace plc_wpf.Model
         /// <param name="rack"></param>
         /// <returns></returns>
 
-        public static string CreatePlc(string name, string ip, string type, int slot, int rack)
+        public static string CreatePlc(string name, string ip, CpuType type, int slot, int rack)
         {
             using (AppDbContext db = new AppDbContext())
             {
@@ -51,7 +49,7 @@ namespace plc_wpf.Model
             }
         }
         //редактировать ПЛС
-        public static string EditPlc(string name, string ip, string type, int slot, int rack)
+        public static string EditPlc(string name, string ip, CpuType type, int slot, int rack)
         {
             using (AppDbContext db = new AppDbContext())
             {

@@ -4,6 +4,7 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Windows.Input;
+using System.Xml.Linq;
 
 namespace plc_modules
 {
@@ -12,12 +13,15 @@ namespace plc_modules
         private bool _enable;
         private Plc _plc;
         #region Connection variable
+        private CpuType _cpuType;
+        private string _plcName;
+        public string PlcName { get => _plcName; set => _plcName = value; }
         public string IpAdress { get => _ipAdress; set => _ipAdress = value; }
         private string _ipAdress;
         public int Slot { get => _slot; set => _slot = value; }
         private int _slot;
-        public string Rack { get => _rack; set => _rack = value; }
-        private string _rack;
+        public int Rack { get => _rack; set => _rack = value; }
+        private int _rack;
         public int TimeCycle { get => _timeCycle; set => _timeCycle = value; }
         private int _timeCycle = 1000;
         public bool ErroConection { get => _erroConection; }
@@ -35,12 +39,16 @@ namespace plc_modules
         public event Action<List<DataItem>> EventResponeReady;
         public List<DataItem> DataForRequest { get => _dataForRequest; set => _dataForRequest = value; }
        
-
         public event Action EventFromPLC;
-        public PlcObj(string ipAdress)
-        {
-            _ipAdress = ipAdress;
 
+        public PlcObj(string cpuName, CpuType cpuType, string ipAdress, int rack,int slot, int timeCycle)
+        {
+            _plcName= cpuName;
+            _cpuType = cpuType;
+            _ipAdress = ipAdress;
+            _rack = rack;
+            _slot = slot;
+            _timeCycle = timeCycle;
         }
         public bool Enable
         {
@@ -97,10 +105,21 @@ namespace plc_modules
         }
         async Task CreatePlc()
         {
-            string ip = "192.168.0.10";
+            DataForRequest.Add( new DataItem 
+            { DataType = DataType.DataBlock, DB = 1, StartByteAdr = 0, VarType = VarType.Int});
+            DataForRequest.Add(new DataItem
+            { DataType = DataType.DataBlock, DB = 2, StartByteAdr = 0, VarType = VarType.Int });
+            DataForRequest.Add(new DataItem
+            { DataType = DataType.DataBlock, DB = 2, StartByteAdr = 2, VarType = VarType.Bit });
+            DataForRequest.Add(new DataItem
+            { DataType = DataType.DataBlock, DB = 2, StartByteAdr = 4, VarType = VarType.S7WString, Count = 10 });
+
+                
+             
+
             try
             {
-                _plc = new Plc(CpuType.S71200, ip, 0, 1);
+                _plc = new Plc(_cpuType,_ipAdress, (short)_rack, (short)_slot);
                 await _plc.OpenAsync();
 
                 if (_plc.IsConnected)

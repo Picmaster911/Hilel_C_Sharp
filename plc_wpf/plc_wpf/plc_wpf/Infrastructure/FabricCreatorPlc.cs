@@ -25,13 +25,12 @@ namespace plc_wpf.Infrastructure
             {
                 allPlc.ForEach(PlcObj => 
                 {
-                    var plc = new PlcObj(PlcObj.IpAddress);
+                    var plc = new PlcObj(PlcObj.PlcName, PlcObj.PlcType, PlcObj.IpAddress, PlcObj.Rack, PlcObj.Slot,1000);
                     var plcVM = new PlcVM(plc);
                     _plcObjList.Add(plc);
                     _plcObjListVM.Add(plcVM);
                 }) ;
             }
-
         }
     }
 }

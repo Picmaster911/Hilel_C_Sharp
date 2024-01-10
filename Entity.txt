@@ -1,0 +1,50 @@
+add-migration Name
+update-database
+
+обязательно 
+/  Database.EnsureDeleted();   // удаляем бд со старой схемой
+//  Database.EnsureCreated();   // создаем бд с новой схемой
+
+
+SELECT * FROM Plc_Conections
+TRUNCATE TABLE Plc_Conections
+
+<Grid Width="200"
+      Height="140">
+    <StackPanel>
+        <GroupBox Header="PLC"
+              BorderBrush="#FF1B2E7D"
+              Grid.Column="0" 
+              Margin="5,0,5,0" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Name PLC" Grid.ColumnSpan="3" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Text="IP" Grid.Row="1"></TextBlock>
+                <TextBlock Text="{Binding IpAdress}" Grid.Row="1"  Grid.Column="1"></TextBlock>
+                <TextBlock Text="Status" Grid.Row="2"></TextBlock>
+                <TextBlock Text="{Binding Enable}" Grid.Row="2" Grid.Column="1"></TextBlock>
+                <TextBlock Text="Error" Grid.Row="3"></TextBlock>
+                <TextBlock Text="{Binding ErroConection }" Grid.Row="3" Grid.Column="1" ></TextBlock>
+                <TextBlock Text="Conection" Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="3"></TextBlock>
+                <Button Margin="1" Grid.Row="5" Grid.Column="0" Content="On"
+              Command="{Binding DataContext.OnConection,
+                RelativeSource={RelativeSource FindAncestor,
+                AncestorType={x:Type ListBox}}}"
+                    CommandParameter="{Binding}"/>
+                <Button Margin="1" Grid.Row="5" Grid.Column="3" Content="Off" />
+            </Grid>
+        </GroupBox>
+    </StackPanel>
+</Grid>

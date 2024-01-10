@@ -1,11 +1,12 @@
-﻿using plc_wpf.Infrastructure.Commands;
+﻿using plc_modules;
+using plc_wpf.Infrastructure.Commands;
 using plc_wpf.Model;
+using S7.Net;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows.Input;
 
 namespace plc_wpf.ViewModel
@@ -13,6 +14,7 @@ namespace plc_wpf.ViewModel
     class PlcConectionVM : ViewModelBase
     {
         private PLC_Conection _selectedItem;
+        private IPAddress ip;
         public PLC_Conection SelectedItem
         {
             get => _selectedItem;           
@@ -49,13 +51,10 @@ namespace plc_wpf.ViewModel
             }
         }
 
-        private string _typePlc;
-        public string TypePlc
+        private CpuType _typePlc;
+        public CpuType TypePlc
         {
-            get
-            {
-                return _typePlc;
-            }
+            get => _typePlc;
 
             set
             {
@@ -106,18 +105,16 @@ namespace plc_wpf.ViewModel
 
                 NamePLC = "";
                 IpAdress = "";
-                TypePlc = "";
+
                 Slot = 0;
                 Rack = 0;
             }
           
         }
-        //public string TypePLC { get; set; }
-        //public int Slot { get; set; }
-        //public string Rack { get; set; }
-        //public bool AutoConect { get; set; }
-        public PlcConectionVM()
+        private PlcComponentVM _plcComponentVM;
+        public PlcConectionVM(PlcComponentVM plcComponentVM)
         {
+            _plcComponentVM = plcComponentVM;
             #region Commands
             AddConection = new LambdaCommand(
                 OnAddConection,
@@ -152,9 +149,29 @@ namespace plc_wpf.ViewModel
 
         private void OnAddConection(object p)
         {
-            var t = p;
+            try
+            {
+               DataWorker.CreatePlc(_namePLC, _ipAddress, _typePlc, _slot, _rack);
+                var sameConection = PlcComponentVM.AllPlcColection.Where(x => x.IpAdress == _ipAddress).Any();
+                if (!sameConection)
+                {
+                    PlcComponentVM.AllPlcColection.Add(new PlcVM(new PlcObj(_namePLC, _typePlc, _ipAddress, _rack, _slot, 2000)));
+                    AllConections.Add(new PLC_Conection
+                    {
+                        PlcName = _namePLC,
+                        IpAddress = _ipAddress,
+                        PlcType = _typePlc,
+                        Slot = _slot,
+                        Rack = _rack,
+                    });
+                }         
+            }
+           catch (Exception ex)
+            {
+
+            }
         }
-        private bool CanAddConection(object p) => true;
+        private bool CanAddConection(object p) => ValidationConection();
         #endregion
         #region EditConection
         public ICommand EditConection { get; }
@@ -170,11 +187,32 @@ namespace plc_wpf.ViewModel
 
         private void OnDeleteConection(object p)
         {
+            var itemForDelete = PlcComponentVM.AllPlcColection
+                .Where(x => x.Plc.IpAdress == _selectedItem.IpAddress)
+                .FirstOrDefault();
+            if (itemForDelete != null) 
+            {
+                PlcComponentVM.AllPlcColection.Remove(itemForDelete);
+                DataWorker.DeletePlc(itemForDelete.IpAdress);
+            }
+           
             AllConections.Remove(SelectedItem);
 
         }
         private bool CanDeleteConection(object p) => (SelectedItem != null);
         #endregion
         #endregion
+
+        private bool ValidationConection()
+        {
+           
+            bool ValidateIP = IPAddress.TryParse(_ipAddress, out ip);
+            return ValidateIP;
+        }
+     //     private void NumberValidationTextBox()
+     //      {
+     //        Regex regex = new Regex("[^0-9]+");
+     //       e.Handled = regex.IsMatch();
+     //   }
     }
 }
