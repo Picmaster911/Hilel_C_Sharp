@@ -21,6 +21,7 @@
         </div>
 </div>
 <script>
+    var curentURL = window.location.protocol + "//" + window.location.host
     const inputName = document.querySelector(`#inputName`)
     const inputValue = document.querySelector(`#inputValue`)
     const priorityNote = document.querySelector(`#priorityNote`)
@@ -30,7 +31,7 @@
         Value: inputValue.defaultValue,
         Priority: @Model.Priority
         }
-    const uri = 'https://localhost:7174/Home/EditeSelectedNote';
+    const uri = `${curentURL}/Home/EditeSelectedNote`;
 
     inputName.addEventListener("input", updateName);
     priorityNote.addEventListener("input", updatePriotity);
