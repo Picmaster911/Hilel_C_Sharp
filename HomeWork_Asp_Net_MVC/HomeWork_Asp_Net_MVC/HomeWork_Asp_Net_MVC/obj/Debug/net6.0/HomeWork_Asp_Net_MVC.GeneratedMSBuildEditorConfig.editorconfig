@@ -18,12 +18,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/picma/Desktop/c\#/HomeWork_Asp_Net_MVC/HomeWork_Asp_Net_MVC/HomeWork_Asp_Net_MVC/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/picma/Desktop/c\#/HomeWork_Asp_Net_MVC/HomeWork_Asp_Net_MVC/HomeWork_Asp_Net_MVC/Views/Home/EditeNote.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0ZU5vdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/picma/Desktop/c\#/HomeWork_Asp_Net_MVC/HomeWork_Asp_Net_MVC/HomeWork_Asp_Net_MVC/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/picma/Desktop/c\#/HomeWork_Asp_Net_MVC/HomeWork_Asp_Net_MVC/HomeWork_Asp_Net_MVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/picma/Desktop/c\#/HomeWork_Asp_Net_MVC/HomeWork_Asp_Net_MVC/HomeWork_Asp_Net_MVC/Views/Shared/Error.cshtml]

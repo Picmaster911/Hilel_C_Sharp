@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Home_Work_Asp_Net.props" />
+</Project>

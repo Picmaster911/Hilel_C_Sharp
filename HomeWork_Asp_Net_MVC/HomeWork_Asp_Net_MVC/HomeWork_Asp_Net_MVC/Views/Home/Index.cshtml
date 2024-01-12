@@ -1,8 +1,49 @@
-﻿@{
+﻿@model NotesViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="row">
+        <h1 class="display-4">My NoteList</h1>
+        <div class="col-2">
+            <form asp-action="AddNewNote" id="form-action" method="post">
+                <h4 for="fname" class="">Form new Note</h4><br><br>
+                <label for="fname" class="form-label">Name:</label>
+                <input type="text" id="fname" name="name" class="form-control"><br><br>
+                <label for="lname">Value:</label>
+                <input type="text" id="lname" name="value" class="form-control"><br><br>
+                <label for="lname">Priority:</label>
+                <input type="number" id="lname" name="priority" class="form-control"><br><br>
+                <input type="submit" id="form-button" value="Add Note" class="btn btn-primary m-2">
+            </form>
+         </div>
+
+        <div class="col-10 ">
+            <div class="d-flex flex-wrap ">
+                @{
+                    foreach (var note in Model.MyNotesList)
+                    {
+                        <div class="card m-4" style="width: 12rem;">
+                            <img src="/image/notes-65.svg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">@note.Name</h5>
+                                <h5 class="card-title">Description Note</h5>
+                                <p class="card-text">@note.Value </p>
+                                <p> Priority: @note.Priority</p>
+                                @Html.ActionLink("Delete", "Delete", "Home", new { Id = @note.Id }, new { @class = "btn btn-lg btn-success m-2" })
+                                @Html.ActionLink("Edite", "EditeNote", "Home", new
+                                    {
+                                        Id = @note.Id,
+                                        Name = @note.Name,
+                                        Value = @note.Value,
+                                        Priority = @note.Value
+                                    }, new { @class = "btn btn-lg btn-success" })
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
 </div>

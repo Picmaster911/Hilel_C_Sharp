@@ -13,8 +13,16 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\HomeWork_Asp_Net_MVC\\HomeWork_Asp_Net_MVC\\wwwroot\\image\\notes-65.svg",
+      "PackagePath": "staticwebassets\\image\\notes-65.svg"
+    },
+    {
       "Id": "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\HomeWork_Asp_Net_MVC\\HomeWork_Asp_Net_MVC\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\HomeWork_Asp_Net_MVC\\HomeWork_Asp_Net_MVC\\wwwroot\\js\\test.js",
+      "PackagePath": "staticwebassets\\js\\test.js"
     },
     {
       "Id": "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\HomeWork_Asp_Net_MVC\\HomeWork_Asp_Net_MVC\\wwwroot\\lib\\bootstrap\\LICENSE",

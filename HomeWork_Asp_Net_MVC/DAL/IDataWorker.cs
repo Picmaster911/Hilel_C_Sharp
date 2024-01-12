@@ -6,8 +6,10 @@ namespace DAL
     public interface IDataWorker
     {
         public void WriteToBD (MyNote newNote);
-        public IEnumerable ReadALLFromBD();
+        public List<MyNote> ReadALLFromBD();
         public void EditFromBD (MyNote noteForEdit);
+
+        public void DeleteFromBD(MyNote noteForDelete);
 
     }
 }
