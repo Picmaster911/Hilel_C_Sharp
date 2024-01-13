@@ -6,7 +6,7 @@
 <div class="text-center">
     <div class="row">
         <h1 class="display-4">My NoteList</h1>
-        <div class="col-2">
+        <div class="col-12 col-sm-6 col-lg-4" lg-2>
             <form asp-action="AddNewNote" id="form-action" method="post">
                 <h4 for="fname" class="">Form new Note</h4><br><br>
                 <label for="fname" class="form-label">Name:</label>
@@ -19,12 +19,12 @@
             </form>
          </div>
 
-        <div class="col-10 ">
+        <div class="col-12 col-sm-6 col-lg-8 ">
             <div class="d-flex flex-wrap ">
                 @{
                     foreach (var note in Model.MyNotesList)
                     {
-                        <div class="card m-4" style="width: 12rem;">
+                        <div class="card m-2" style="width: 12rem;">
                             <img src="/image/notes-65.svg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">@note.Name</h5>
