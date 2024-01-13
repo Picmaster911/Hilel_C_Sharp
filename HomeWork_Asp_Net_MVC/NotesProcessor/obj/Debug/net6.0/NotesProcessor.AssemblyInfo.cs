@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NotesProcessor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98f5f9e9eb26f83cf340b9ea4b60e5e0f740dfa2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+989b2eae2d2956e238b83d90af23f58cf6ee1289")]
 [assembly: System.Reflection.AssemblyProductAttribute("NotesProcessor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NotesProcessor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

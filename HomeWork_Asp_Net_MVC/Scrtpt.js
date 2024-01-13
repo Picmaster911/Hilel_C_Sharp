@@ -1,42 +1,3 @@
-﻿@using NotesProcessor
-@model MyNote
-
-@{
-    ViewData["Title"] = "";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Edite select Note ID @Model.Id </h1>
-    <h4 class="display-4">Edite use Js </h4>
-        <div>
-        <form asp-action="EditeSelectedNote" id="form-action" method="post">
-                <label for="fname">Name:</label>
-                <input value="@Model.Name" type="text" id="inputName" name="name"><br><br>
-                <label for="lname">Value:</label>
-                <input value="@Model.Value" type="text" id="inputValue" name="value"><br><br>
-                <label for="lname">Priority:</label>
-                <input value="@Model.Priority" type="number" id="priorityNote" name="priority"><br><br>               
-            </form>
-        <button id="ButtonOk" class="btn btn-primary m-2">Save Note</button>
-        <a class="btn btn-primary m-2" asp-area="" asp-controller="Home" asp-action="Index">Return</a>
-        </div>
-
-    <h4 class="display-4">Edite use #C Asp-Net Helpers </h4>
-    <div>
-        <form asp-controller="Home" asp-action="EditeSelectedNoteAspNet" method="post">
-            <input value="@Model.Id" asp-for="Id" hidden><br><br><br><br>
-            <label for="fname">Name:</label>
-            <input value="@Model.Name" asp-for="Name"><br><br>
-            <label for="lname">Value:</label>
-            <input value="@Model.Value" asp-for="Value"><br><br>
-            <label for="lname">Priority:</label>
-            <input value="@Model.Priority" type="number" asp-for="Priority"><br><br>
-            <button type="submit" class="btn btn-primary m-2">Save Note</button>
-            <a class="btn btn-primary m-2" asp-area="" asp-controller="Home" asp-action="Index">Return</a>
-        </form>
-    </div>
-</div>
-
 <script>
     var curentURL = window.location.protocol + "//" + window.location.host
     const inputName = document.querySelector(`#inputName`)
@@ -97,5 +58,3 @@
         })
     }
 </script>
-
-           

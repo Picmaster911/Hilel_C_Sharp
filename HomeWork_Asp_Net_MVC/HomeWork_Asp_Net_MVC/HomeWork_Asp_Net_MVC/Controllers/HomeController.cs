@@ -55,5 +55,11 @@ namespace HomeWork_Asp_Net_MVC.Controllers
             _dataWorker.EditFromBD(newNote);
             return Json(newNote);
         }
+        [HttpPost]
+        public IActionResult EditeSelectedNoteAspNet(MyNote newNote)
+        {
+            _dataWorker.EditFromBD(newNote);
+            return View("EditeNote", newNote);
+        }
     }
 }
