@@ -1,0 +1,12 @@
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\bin\Debug\net6.0\NoteContracs.deps.json
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\bin\Debug\net6.0\NoteContracs.dll
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\bin\Debug\net6.0\NoteContracs.pdb
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\obj\Debug\net6.0\NoteContracs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\obj\Debug\net6.0\NoteContracs.AssemblyInfoInputs.cache
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\obj\Debug\net6.0\NoteContracs.AssemblyInfo.cs
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\obj\Debug\net6.0\NoteContracs.csproj.CoreCompileInputs.cache
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\obj\Debug\net6.0\NoteContracs.sourcelink.json
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\obj\Debug\net6.0\NoteContracs.dll
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\obj\Debug\net6.0\refint\NoteContracs.dll
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\obj\Debug\net6.0\NoteContracs.pdb
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\NoteContracs\obj\Debug\net6.0\ref\NoteContracs.dll

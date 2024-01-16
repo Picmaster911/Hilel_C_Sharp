@@ -1,22 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NotesProcessor;
+using NoteContracs;
 
 
 namespace DAL
 {
-    internal class AppDbContext: DbContext
+    public class AppDbContext: DbContext
     {
-        public DbSet <MyNote> MyNotes { get; set; }
-    
-        public AppDbContext ()
+        public DbSet <MyNote> MyNotes { get; set; }  
+        public AppDbContext (DbContextOptions<AppDbContext> options) : base(options)
         {
-            //this.Database.EnsureDeleted();
-            this.Database.EnsureCreated();
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Data Source = MyNoteDatabase.db");
-            base.OnConfiguring(optionsBuilder);
+
         }
     }
 }

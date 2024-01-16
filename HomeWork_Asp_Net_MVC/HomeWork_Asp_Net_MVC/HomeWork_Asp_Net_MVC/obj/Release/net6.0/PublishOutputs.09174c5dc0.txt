@@ -40,6 +40,8 @@ C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\obj\Release\net6.0\PubTmp\Out\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\obj\Release\net6.0\PubTmp\Out\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\obj\Release\net6.0\PubTmp\Out\DAL.dll
-C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\obj\Release\net6.0\PubTmp\Out\NotesProcessor.dll
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\obj\Release\net6.0\PubTmp\Out\MyNoteProcessor.dll
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\obj\Release\net6.0\PubTmp\Out\NoteContracs.dll
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\obj\Release\net6.0\PubTmp\Out\DAL.pdb
-C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\obj\Release\net6.0\PubTmp\Out\NotesProcessor.pdb
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\obj\Release\net6.0\PubTmp\Out\MyNoteProcessor.pdb
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\obj\Release\net6.0\PubTmp\Out\NoteContracs.pdb

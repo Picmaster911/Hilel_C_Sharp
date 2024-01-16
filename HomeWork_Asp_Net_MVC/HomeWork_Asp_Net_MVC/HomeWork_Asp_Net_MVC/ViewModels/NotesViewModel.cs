@@ -1,24 +1,27 @@
-﻿using DAL;
-using NotesProcessor;
-using System.ComponentModel.DataAnnotations;
+﻿using MyNoteProcessor;
+using NoteContracs;
 
 namespace HomeWork_Asp_Net_MVC.ViewModels
 {
     public class NotesViewModel
     {
-        private IDataWorker _dataWorker;
+        private INoteProcessor _noteProcessor;
         public List <MyNote> MyNotesList { get; set; }
         public MyNote MyNote;
 
-        public NotesViewModel(IDataWorker dataWorker)
+        public NotesViewModel(INoteProcessor noteProcessor)
         {
-            _dataWorker = dataWorker;
+            _noteProcessor = noteProcessor;
             ReadAllNotes();
         }
 
         public void ReadAllNotes()
         {
-            MyNotesList = _dataWorker.ReadALLFromBD();
+            MyNotesList = (List<MyNote>)_noteProcessor.ReadALLFromBD();
+        }
+        public void SortByPriority()
+        {
+            MyNotesList = (List<MyNote>)_noteProcessor.GetSortNotes();
         }
     }
 }

@@ -554,7 +554,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.26",
-          "NotesProcessor": "1.0.0"
+          "NoteContracs": "1.0.0"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -563,14 +563,27 @@
           "bin/placeholder/DAL.dll": {}
         }
       },
-      "NotesProcessor/1.0.0": {
+      "MyNoteProcessor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DAL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MyNoteProcessor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyNoteProcessor.dll": {}
+        }
+      },
+      "NoteContracs/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/NotesProcessor.dll": {}
+          "bin/placeholder/NoteContracs.dll": {}
         },
         "runtime": {
-          "bin/placeholder/NotesProcessor.dll": {}
+          "bin/placeholder/NoteContracs.dll": {}
         }
       }
     }
@@ -1223,16 +1236,22 @@
       "path": "../../DAL/DAL.csproj",
       "msbuildProject": "../../DAL/DAL.csproj"
     },
-    "NotesProcessor/1.0.0": {
+    "MyNoteProcessor/1.0.0": {
       "type": "project",
-      "path": "../../NotesProcessor/NotesProcessor.csproj",
-      "msbuildProject": "../../NotesProcessor/NotesProcessor.csproj"
+      "path": "../../MyNoteProcessor/MyNoteProcessor.csproj",
+      "msbuildProject": "../../MyNoteProcessor/MyNoteProcessor.csproj"
+    },
+    "NoteContracs/1.0.0": {
+      "type": "project",
+      "path": "../../NoteContracs/NoteContracs.csproj",
+      "msbuildProject": "../../NoteContracs/NoteContracs.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "DAL >= 1.0.0",
-      "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.26"
+      "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.26",
+      "MyNoteProcessor >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1270,6 +1289,9 @@
           "projectReferences": {
             "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\DAL\\DAL.csproj": {
               "projectPath": "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\DAL\\DAL.csproj"
+            },
+            "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\MyNoteProcessor\\MyNoteProcessor.csproj": {
+              "projectPath": "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\MyNoteProcessor\\MyNoteProcessor.csproj"
             }
           }
         }

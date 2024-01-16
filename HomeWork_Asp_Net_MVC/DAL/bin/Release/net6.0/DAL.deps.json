@@ -9,7 +9,7 @@
       "DAL/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.26",
-          "NotesProcessor": "1.0.0"
+          "NoteContracs": "1.0.0"
         },
         "runtime": {
           "DAL.dll": {}
@@ -379,9 +379,9 @@
           "System.Text.Encodings.Web": "6.0.0"
         }
       },
-      "NotesProcessor/1.0.0": {
+      "NoteContracs/1.0.0": {
         "runtime": {
-          "NotesProcessor.dll": {}
+          "NoteContracs.dll": {}
         }
       }
     }
@@ -588,7 +588,7 @@
       "path": "system.text.json/6.0.0",
       "hashPath": "system.text.json.6.0.0.nupkg.sha512"
     },
-    "NotesProcessor/1.0.0": {
+    "NoteContracs/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

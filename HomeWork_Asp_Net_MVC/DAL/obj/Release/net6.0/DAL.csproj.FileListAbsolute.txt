@@ -1,8 +1,6 @@
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\bin\Release\net6.0\DAL.deps.json
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\bin\Release\net6.0\DAL.dll
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\bin\Release\net6.0\DAL.pdb
-C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\bin\Release\net6.0\NotesProcessor.dll
-C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\bin\Release\net6.0\NotesProcessor.pdb
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\obj\Release\net6.0\DAL.csproj.AssemblyReference.cache
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\obj\Release\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\obj\Release\net6.0\DAL.AssemblyInfoInputs.cache
@@ -14,3 +12,5 @@ C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\obj\Release\net6.0\DAL.dll
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\obj\Release\net6.0\refint\DAL.dll
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\obj\Release\net6.0\DAL.pdb
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\obj\Release\net6.0\ref\DAL.dll
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\bin\Release\net6.0\NoteContracs.dll
+C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\DAL\bin\Release\net6.0\NoteContracs.pdb

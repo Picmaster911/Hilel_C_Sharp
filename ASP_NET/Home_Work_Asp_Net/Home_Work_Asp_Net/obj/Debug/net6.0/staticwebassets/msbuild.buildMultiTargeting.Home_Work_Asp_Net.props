@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Home_Work_Asp_Net.props" />
-</Project>

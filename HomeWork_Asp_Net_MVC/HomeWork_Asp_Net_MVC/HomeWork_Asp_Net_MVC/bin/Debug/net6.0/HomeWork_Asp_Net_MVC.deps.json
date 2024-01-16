@@ -9,7 +9,8 @@
       "HomeWork_Asp_Net_MVC/1.0.0": {
         "dependencies": {
           "DAL": "1.0.0",
-          "Microsoft.EntityFrameworkCore.Sqlite": "6.0.26"
+          "Microsoft.EntityFrameworkCore.Sqlite": "6.0.26",
+          "MyNoteProcessor": "1.0.0"
         },
         "runtime": {
           "HomeWork_Asp_Net_MVC.dll": {}
@@ -338,15 +339,23 @@
       "DAL/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.26",
-          "NotesProcessor": "1.0.0"
+          "NoteContracs": "1.0.0"
         },
         "runtime": {
           "DAL.dll": {}
         }
       },
-      "NotesProcessor/1.0.0": {
+      "MyNoteProcessor/1.0.0": {
+        "dependencies": {
+          "DAL": "1.0.0"
+        },
         "runtime": {
-          "NotesProcessor.dll": {}
+          "MyNoteProcessor.dll": {}
+        }
+      },
+      "NoteContracs/1.0.0": {
+        "runtime": {
+          "NoteContracs.dll": {}
         }
       }
     }
@@ -558,7 +567,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "NotesProcessor/1.0.0": {
+    "MyNoteProcessor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NoteContracs/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

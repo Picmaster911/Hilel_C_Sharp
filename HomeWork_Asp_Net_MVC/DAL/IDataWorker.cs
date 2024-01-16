@@ -1,14 +1,12 @@
-﻿using NotesProcessor;
-using System.Collections;
+﻿using NoteContracs;
 
 namespace DAL
 {
-    public interface IDataWorker
+    public interface IDataWorker<T> where T : class
     {
-        public void WriteToBD (MyNote newNote);
-        public List<MyNote> ReadALLFromBD();
+        public IEnumerable<T> ReadALLFromBD();
+        public void WriteToBD (MyNote newNote);   
         public void EditFromBD (MyNote noteForEdit);
-
         public void DeleteFromBD(MyNote noteForDelete);
 
     }

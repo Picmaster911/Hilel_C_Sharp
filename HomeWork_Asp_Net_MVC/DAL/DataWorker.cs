@@ -1,69 +1,54 @@
-﻿using NotesProcessor;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NoteContracs;
 
 namespace DAL
 {
-    public class DataWorker : IDataWorker
+    public class DataWorker : IDataWorker<MyNote>
     {
-      
+        private readonly AppDbContext _appDbContext;
+        public DataWorker(AppDbContext appDbContext)
+        {
+            _appDbContext = appDbContext;
+        }
 
         public void EditFromBD(MyNote noteForEdit)
         {
-            using (var db = new AppDbContext())
+            var allNotes = _appDbContext.MyNotes;
+            var needNodes = allNotes.Where(x => x.Id == noteForEdit.Id).FirstOrDefault();
+            if (needNodes != null && noteForEdit.Value != null && noteForEdit.Name != null)
             {
-                var allNotes = db.MyNotes;
-                var needNodes = allNotes.Where(x => x.Id == noteForEdit.Id).FirstOrDefault();
-                if (needNodes != null && noteForEdit.Value !=null && noteForEdit.Name != null) 
-                {
-                    needNodes.Value = noteForEdit.Value;
-                    needNodes.Name = noteForEdit.Name;
-                    needNodes.Priority = noteForEdit.Priority;  
-                }
-                db.SaveChanges();
+                needNodes.Value = noteForEdit.Value;
+                needNodes.Name = noteForEdit.Name;
+                needNodes.Priority = noteForEdit.Priority;
             }
+            _appDbContext.SaveChanges();
         }
 
-        public List<MyNote> ReadALLFromBD()
+        public IEnumerable<MyNote> ReadALLFromBD()
         {
-            using (var db = new AppDbContext())
-            {
-                var allNotes = db.MyNotes.ToList();
-                return allNotes;    
-            }
+            var allNotes = _appDbContext.MyNotes.ToList();
+            return allNotes;
         }
 
         public void WriteToBD(MyNote newNote)
         {
-            using (var db = new AppDbContext())
+
+            var allNotes = _appDbContext.MyNotes;
+            if (newNote.Name != null && newNote.Value != null)
             {
-                var allNotes = db.MyNotes;
-                if(newNote.Name != null && newNote.Value != null)
-                {
-                    allNotes.Add(newNote);
-                    db.SaveChanges();
-                }           
+                allNotes.Add(newNote);
+                _appDbContext.SaveChanges();
             }
-           
         }
 
         public void DeleteFromBD(MyNote noteForDelete)
         {
-            using (var db = new AppDbContext())
+            var forDelete = _appDbContext.MyNotes.Where(x => x.Id == noteForDelete.Id).FirstOrDefault();
+            if (forDelete != null)
             {
-
-                var forDelete = db.MyNotes.Where(x => x.Id == noteForDelete.Id).FirstOrDefault();
-                if (forDelete != null)
-                {
-                    db.MyNotes.Remove(forDelete);
-                    db.SaveChanges();
-                }
+                _appDbContext.MyNotes.Remove(forDelete);
+                _appDbContext.SaveChanges();
             }
-
         }
+
     }
 }

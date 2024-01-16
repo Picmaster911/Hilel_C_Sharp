@@ -549,14 +549,14 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "NotesProcessor/1.0.0": {
+      "NoteContracs/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/NotesProcessor.dll": {}
+          "bin/placeholder/NoteContracs.dll": {}
         },
         "runtime": {
-          "bin/placeholder/NotesProcessor.dll": {}
+          "bin/placeholder/NoteContracs.dll": {}
         }
       }
     }
@@ -1204,16 +1204,16 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "NotesProcessor/1.0.0": {
+    "NoteContracs/1.0.0": {
       "type": "project",
-      "path": "../NotesProcessor/NotesProcessor.csproj",
-      "msbuildProject": "../NotesProcessor/NotesProcessor.csproj"
+      "path": "../NoteContracs/NoteContracs.csproj",
+      "msbuildProject": "../NoteContracs/NoteContracs.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.26",
-      "NotesProcessor >= 1.0.0"
+      "NoteContracs >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1249,8 +1249,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\NotesProcessor\\NotesProcessor.csproj": {
-              "projectPath": "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\NotesProcessor\\NotesProcessor.csproj"
+            "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\NoteContracs\\NoteContracs.csproj": {
+              "projectPath": "C:\\Users\\picma\\Desktop\\c#\\HomeWork_Asp_Net_MVC\\NoteContracs\\NoteContracs.csproj"
             }
           }
         }

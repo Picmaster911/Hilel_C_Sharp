@@ -1,15 +1,45 @@
 using DAL;
 using HomeWork_Asp_Net_MVC.ViewModels;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using NoteContracs;
+using MyNoteProcessor;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-// Add services to the container.
+#region connected certificate
+//string certPath = @"C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\certificate.pfx";
+//string certKeyPath = @"C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\HomeWork_Asp_Net_MVC\private.key"; ;
+
+//X509Certificate2 currentCertificate = X509Certificate2.CreateFromPemFile(certPath, certKeyPath);
+
+//// Configure Kestrel to use the certificate
+//builder.WebHost.ConfigureKestrel(serverOptions =>
+//{
+//    serverOptions.ConfigureHttpsDefaults(listenOptions =>
+//    {
+//        listenOptions.ServerCertificateSelector = (context, name) => currentCertificate;
+//    });
+//});
+
+#endregion
+
+string connection = builder.Configuration.GetConnectionString("AppDbContext");
+builder.Services.AddDbContext<AppDbContext>(
+    options => options.UseSqlite(connection));
+
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IDataWorker, DataWorker>();
-builder.Services.AddSingleton<NotesViewModel>();
+builder.Services.AddScoped<IDataWorker<MyNote>, DataWorker>();
+builder.Services.AddScoped<INoteProcessor, NoteProcessor>();
+builder.Services.AddScoped<NotesViewModel>();
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dataContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dataContext.Database.EnsureCreated();
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

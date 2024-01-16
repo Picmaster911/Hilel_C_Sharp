@@ -29,7 +29,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-        <ListView  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="3" ItemsSource="{Binding AllConections}" SelectedItem="{Binding SelectedItem}">
+        <ListView  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="3" ItemsSource="{Binding AllConections}" SelectedItem="{Binding SelectedItem}" Background="#FFD3DCDE">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" Width="220" DisplayMemberBinding="{Binding Path=PlcName}"/>
