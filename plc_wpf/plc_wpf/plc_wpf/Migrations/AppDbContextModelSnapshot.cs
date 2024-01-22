@@ -50,6 +50,56 @@ namespace plc_wpf.Migrations
 
                     b.ToTable("Plc_Conections");
                 });
+
+            modelBuilder.Entity("plc_wpf.Model.TagsForPlc", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<byte>("BitAdr")
+                        .HasColumnType("tinyint");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DB")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DataType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PLC_ConectionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StartByteAdr")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VarType")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PLC_ConectionId");
+
+                    b.ToTable("Pls_Tags");
+                });
+
+            modelBuilder.Entity("plc_wpf.Model.TagsForPlc", b =>
+                {
+                    b.HasOne("plc_wpf.Model.PLC_Conection", null)
+                        .WithMany("PlcTags")
+                        .HasForeignKey("PLC_ConectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("plc_wpf.Model.PLC_Conection", b =>
+                {
+                    b.Navigation("PlcTags");
+                });
 #pragma warning restore 612, 618
         }
     }

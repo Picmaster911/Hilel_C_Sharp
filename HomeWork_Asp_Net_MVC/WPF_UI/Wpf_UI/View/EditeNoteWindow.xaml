@@ -1,0 +1,61 @@
+﻿<Window x:Class="Wpf_UI.View.EditeNoteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_UI.View"
+        mc:Ignorable="d"
+        Title="EditeNoteWindow" Height="350" Width="200" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Height="26" Text="Edite select Note" Grid.Row="0"  HorizontalAlignment="Center"></TextBlock>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"  >
+            <TextBlock Height="26" Text="Id:" Grid.Row="1" Margin="70,0,5,0"></TextBlock>
+            <TextBlock Height="26" Text="{Binding Id}" Grid.Row="1" Margin="5,0,10,0" ></TextBlock>
+        </StackPanel>
+        <TextBlock Height="26" Text="Name" Grid.Row="2" HorizontalAlignment="Center"></TextBlock>
+        <TextBox Grid.Row="3" Text="{Binding Name}" Margin="10,0,10,0">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBlock Height="26" Text="Value" Grid.Row="4" HorizontalAlignment="Center"></TextBlock>
+        <TextBox Grid.Row="5" Text="{Binding Value}" Margin="10,0,10,0">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBlock Height="26" Text="Prioriry" Grid.Row="6" HorizontalAlignment="Center"></TextBlock>
+        <TextBox Grid.Row="7" Text="{Binding Priority}" Margin="10,0,10,0">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button  Grid.Row="9" Content="Edite" Margin="10,0,10,10" Background="#FF26FF6F"
+                 Command="{Binding EditeCommand}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Window>

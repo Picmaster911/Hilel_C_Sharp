@@ -11,6 +11,7 @@ namespace plc_wpf.Model
     internal class AppDbContext:DbContext
     {
         public DbSet<PLC_Conection> Plc_Conections { get; set; }
+        public DbSet<TagsForPlc> Pls_Tags { get; set; }
 
         public AppDbContext()
         {

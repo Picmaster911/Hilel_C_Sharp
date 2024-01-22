@@ -1,50 +1,48 @@
 add-migration Name
 update-database
+Remove-Migration
 
 обязательно 
 /  Database.EnsureDeleted();   // удаляем бд со старой схемой
-//  Database.EnsureCreated();   // создаем бд с новой схемой
+// Database.EnsureCreated();   // создаем бд с новой схемой
 
 
 SELECT * FROM Plc_Conections
 TRUNCATE TABLE Plc_Conections
 
-<Grid Width="200"
-      Height="140">
-    <StackPanel>
-        <GroupBox Header="PLC"
-              BorderBrush="#FF1B2E7D"
-              Grid.Column="0" 
-              Margin="5,0,5,0" Grid.ColumnSpan="2">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="Name PLC" Grid.ColumnSpan="3" HorizontalAlignment="Center"></TextBlock>
-                <TextBlock Text="IP" Grid.Row="1"></TextBlock>
-                <TextBlock Text="{Binding IpAdress}" Grid.Row="1"  Grid.Column="1"></TextBlock>
-                <TextBlock Text="Status" Grid.Row="2"></TextBlock>
-                <TextBlock Text="{Binding Enable}" Grid.Row="2" Grid.Column="1"></TextBlock>
-                <TextBlock Text="Error" Grid.Row="3"></TextBlock>
-                <TextBlock Text="{Binding ErroConection }" Grid.Row="3" Grid.Column="1" ></TextBlock>
-                <TextBlock Text="Conection" Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="3"></TextBlock>
-                <Button Margin="1" Grid.Row="5" Grid.Column="0" Content="On"
-              Command="{Binding DataContext.OnConection,
-                RelativeSource={RelativeSource FindAncestor,
-                AncestorType={x:Type ListBox}}}"
-                    CommandParameter="{Binding}"/>
-                <Button Margin="1" Grid.Row="5" Grid.Column="3" Content="Off" />
-            </Grid>
-        </GroupBox>
-    </StackPanel>
-</Grid>
+Жадная загрузка
+
+using (Context db = new Context())
+{
+	Team team = db.Teams
+	.Include (t => t.Players)     //  Players колекция в тим связанная вторичным ключем  c Teams 		 
+          .ThenInclude (p => p.Country) //  Country колекция в Players связанная вторичным ключем c Country
+}
+
+  public class Team
+  {
+      public int Id { get; set; }
+      public string Name { get; set; }
+      public List <Player> Players{ get; set;}
+  }
+
+
+  public class Player
+  {
+      public int Id { get; set; }
+      public string Name { get; set; }
+      public int TeamId { get; set; }   
+      public Team Team { get; set; }    -вторичный ключ TeamId  должен состоять из Team+Id   
+  }
+
+CREATE TABLE [dbo].[Pls_Tags] (
+    [Id]              INT     IDENTITY (1, 1) NOT NULL,
+    [DataType]        INT     NOT NULL,
+    [VarType]         INT     NOT NULL,
+    [DB]              INT     NOT NULL,
+    [StartByteAdr]    INT     NOT NULL,
+    [BitAdr]          TINYINT NOT NULL,
+    [Count]           INT     NOT NULL,
+    [PLC_ConectionId] INT     DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [PK_Pls_Tags] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Pls_Tags_Plc_Conections_PLC_ConectionId] FOREIGN KEY ([PLC_ConectionId]) REFERENCES [dbo].[Plc_Conections] ([Id]) ON DELETE CASCADE // удалить связанные елементы 

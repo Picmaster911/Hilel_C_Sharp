@@ -1,0 +1,16 @@
+﻿@page "/"
+@inject Func<ISampleTime> factorysamleTime
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+<h2>@CurentTime?.CurrentTime</h2>
+<button class="btn btn-primary" @onclick="GetNewTime"></button>
+
+@code{
+    ISampleTime? CurentTime;
+    private void GetNewTime()
+    {
+        CurentTime = factorysamleTime();
+    }
+}

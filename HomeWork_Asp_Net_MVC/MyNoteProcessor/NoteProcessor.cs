@@ -39,5 +39,11 @@ namespace MyNoteProcessor
         {
             _dataWorker.WriteToBD(newNote);
         }
+
+        public int GetLastElement()
+        {
+            var sortNotes = _dataWorker.ReadALLFromBD().ToList().Last();
+            return sortNotes.Id;
+        }
     }
 }

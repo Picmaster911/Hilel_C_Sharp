@@ -11,6 +11,7 @@ namespace MyNoteProcessor
         public void EditFromBD(MyNote noteForEdit);
         public void DeleteFromBD(MyNote noteForDelete);
         public IEnumerable GetSortNotes();
+        public int GetLastElement();
 
     }
 }
