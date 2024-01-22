@@ -4,8 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyNoteProcessor;
 using NoteContracs;
-using System.IO;
-using System.Reflection;
 using System.Windows;
 using Wpf_UI.Infrastructure;
 using Wpf_UI.View;
