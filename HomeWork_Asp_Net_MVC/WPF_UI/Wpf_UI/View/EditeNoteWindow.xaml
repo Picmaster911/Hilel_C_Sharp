@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_UI.View"
+        x:Name="EditeWindows"
         mc:Ignorable="d"
         Title="EditeNoteWindow" Height="350" Width="200" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
@@ -49,7 +50,7 @@
             </TextBox.Resources>
         </TextBox>
         <Button  Grid.Row="9" Content="Edite" Margin="10,0,10,10" Background="#FF26FF6F"
-                 Command="{Binding EditeCommand}">
+                 Command="{Binding EditeCommand}" CommandParameter="{Binding ElementName=EditeWindows}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>

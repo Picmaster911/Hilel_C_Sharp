@@ -81,6 +81,7 @@ namespace Wpf_UI.ViewModel.Elements
 
         private void OnEditeCommand(object p)
         {
+            var windowEdite = (Window)p;
             _noteProcessor.EditFromBD(
                  new MyNote()
                  {
@@ -88,8 +89,9 @@ namespace Wpf_UI.ViewModel.Elements
                      Name = _name,
                      Value = _value,
                      Priority = _priority
-                 }
+                 }               
              );
+            windowEdite.Close();
         }
         private bool CanOnEditeCommand(object p) => true;
         #endregion
