@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_UI.View"
         mc:Ignorable="d"
+        x:Name="AddWindow"
            Title="AddNoteWindow" Height="350" Width="200" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
         <Grid.RowDefinitions>
@@ -45,7 +46,7 @@
             </TextBox.Resources>
         </TextBox>
         <Button  Grid.Row="8" Content="Add Note" Margin="10,0,10,0" Background="#FF26FF6F"
-               Command="{Binding AddNoteCommand}">
+               Command="{Binding AddNoteCommand}" CommandParameter="{Binding ElementName=AddWindow}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Wpf_UI.Infrastructure;
 using Wpf_UI.Infrastructure.Commands;
@@ -97,6 +98,7 @@ namespace Wpf_UI.ViewModel.Elements
 
         private void OnAddNoteCommand(object p)
         {
+            var windowAdd = (Window)p;
             var newNote = new MyNote()
             {
                 Name = _name,
@@ -108,6 +110,7 @@ namespace Wpf_UI.ViewModel.Elements
                 _noteProcessor.WriteToBD(newNote);
                 _id = _noteProcessor.GetLastElement();
                 _creatorNotes.ObsNoteViewModel.Add(this);
+                windowAdd.Close();
             }
             catch (Exception ex) 
             {
