@@ -6,15 +6,16 @@ using Wpf_UI.ViewModel.Elements;
 
 namespace Wpf_UI.Infrastructure
 {
-    class CreatorNotes
+    class CreatorNotes : ICreatorNotes
     {
-        public List <NoteViewModel> MyNotesVM { get; set; }
-        public List <MyNote> MyNotes { get; set; }
+        public List<NoteViewModel> MyNotesVM { get; set; }
+        public List<MyNote> MyNotes { get; set; }
 
         private INoteProcessor _noteProcessor;
-        public ObservableCollection<NoteViewModel> ObsNoteViewModel = new();
 
-        public CreatorNotes(INoteProcessor noteProcessor)
+        public ObservableCollection <NoteViewModel> ObsNoteViewModel { get; set; }
+
+    public CreatorNotes(INoteProcessor noteProcessor)
         {
             _noteProcessor = noteProcessor;
             CreateNoteViewModel();
@@ -23,20 +24,21 @@ namespace Wpf_UI.Infrastructure
 
         public void CreateNoteViewModel()
         {
-          var MyNotes = (List<MyNote>)_noteProcessor.ReadALLFromBD();
-          MyNotesVM = MyNotes.Select(x => new NoteViewModel(_noteProcessor,this)
-          {
-              Id = x.Id,
-              Name = x.Name,
-              Value = x.Value,
-              Priority = x.Priority,
-              myNote = x                    
-          }).ToList();
+            var MyNotes = (List<MyNote>)_noteProcessor.ReadALLFromBD();
+            MyNotesVM = MyNotes.Select(x => new NoteViewModel(_noteProcessor, this)
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Value = x.Value,
+                Priority = x.Priority,
+                myNote = x
+            }).ToList();
         }
 
         public void CreateObserNote()
         {
-          MyNotesVM.ForEach(x => ObsNoteViewModel.Add(x));
+            ObsNoteViewModel = new ObservableCollection<NoteViewModel>();
+            MyNotesVM.ForEach(x => ObsNoteViewModel.Add(x));
         }
     }
 }

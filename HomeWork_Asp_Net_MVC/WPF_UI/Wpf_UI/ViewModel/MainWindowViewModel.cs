@@ -21,8 +21,8 @@ namespace Wpf_UI.ViewModel
             set => _obsNoteViewModel = value;       
         }       
    
-        private CreatorNotes _creatorNotes;
-        public MainWindowViewModel(CreatorNotes creatorNotes, INoteProcessor noteProcessor)
+        private ICreatorNotes _creatorNotes;
+        public MainWindowViewModel(ICreatorNotes creatorNotes, INoteProcessor noteProcessor)
         {
             _noteProcessor = noteProcessor;
             _creatorNotes = creatorNotes;

@@ -17,8 +17,8 @@ namespace Wpf_UI.ViewModel.Elements
     class NoteViewModel:ViewModelBase
     {
         INoteProcessor _noteProcessor;
-        private CreatorNotes _creatorNotes;
-        public NoteViewModel(INoteProcessor noteProcessor, CreatorNotes creatorNotes)
+        private ICreatorNotes _creatorNotes;
+        public NoteViewModel(INoteProcessor noteProcessor, ICreatorNotes creatorNotes)
         {
             _creatorNotes = creatorNotes;
             _noteProcessor = noteProcessor;

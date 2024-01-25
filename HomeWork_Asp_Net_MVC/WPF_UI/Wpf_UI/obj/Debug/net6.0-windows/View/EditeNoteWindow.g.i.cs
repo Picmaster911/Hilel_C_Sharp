@@ -61,7 +61,7 @@ namespace Wpf_UI.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Wpf_UI;V1.0.0.0;component/view/editenotewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Wpf_UI;component/view/editenotewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\EditeNoteWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -46,7 +46,7 @@ namespace Wpf_UI
             services.AddTransient<IDataWorker<MyNote>, DataWorker>();
 
             services.AddTransient<NoteViewModel>();
-            services.AddSingleton<CreatorNotes>(); 
+            services.AddSingleton<ICreatorNotes,CreatorNotes>(); 
 
         }
 
