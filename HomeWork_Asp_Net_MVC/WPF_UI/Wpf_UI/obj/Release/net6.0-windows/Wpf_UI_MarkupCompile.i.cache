@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\picma\Desktop\c#\HomeWork_Asp_Net_MVC\WPF_UI\Wpf_UI\App.xaml
-1-487866684
+4458621639
 
-12-945490651
+161397382093
 2351673472704
-View\MainWindow.xaml;
+View\AddNewNoteWindow.xaml;View\EditeNoteWindow.xaml;View\Elements\Note.xaml;View\MainWindow.xaml;
 
 True
 

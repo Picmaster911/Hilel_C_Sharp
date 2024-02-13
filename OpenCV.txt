@@ -1,0 +1,103 @@
+using Emgu.CV;
+using Emgu.CV.CvEnum;
+using Emgu.CV.Structure;
+using System;
+
+// Открываем видеопоток
+VideoCapture videoCapture = new VideoCapture("путь_к_видеофайлу.mp4");
+
+// Создаем видеоплеер для записи видео
+VideoWriter videoWriter = new VideoWriter("чернобелое_видео.avi", 
+                                           VideoWriter.Fourcc('X', 'V', 'I', 'D'), 
+                                           videoCapture.Fps, 
+                                           new System.Drawing.Size((int)videoCapture.Width, (int)videoCapture.Height), 
+                                           true);
+
+// Обработка кадр за кадром
+while (true)
+{
+    // Считываем кадр
+    Mat frame = videoCapture.QueryFrame();
+    if (frame == null)
+    {
+        break; // Выход из цикла, если достигнут конец видео
+    }
+
+    // Преобразуем кадр в черно-белый
+    Mat grayFrame = new Mat();
+    CvInvoke.CvtColor(frame, grayFrame, ColorConversion.Bgr2Gray);
+
+    // Записываем кадр в видео
+    videoWriter.Write(grayFrame);
+}
+
+// Освобождаем ресурсы
+videoCapture.Dispose();
+videoWriter.Dispose();
+
+В этом примере:
+
+Мы открываем видеопоток с помощью VideoCapture.
+Создаем объект VideoWriter для записи черно-белого видео.
+В цикле мы считываем каждый кадр видео с помощью QueryFrame(), конвертируем его в черно-белый, используя CvtColor(), и записываем в выходное видео с помощью Write().
+После обработки всех кадров мы освобождаем ресурсы с помощью Dispose().
+Пожалуйста, убедитесь, что пути к вашему видеофайлу и выходному видеофайлу правильно указаны в соответствующих местах кода.
+
+
+
+        private VideoCapture _capture;
+        private Mat _frame;
+
+        private ImageSource _videoSource { get; set; }
+        public ImageSource VideoSource
+        
+        { get => _videoSource;
+            set 
+            {
+                _videoSource = value;
+                OnPropertyChanged();
+            } 
+        }
+
+        public MainWindowViewModel()
+        {
+            _capture = new VideoCapture(0); // 0 - индекс камеры, если у вас несколько камер, измените соответственно
+            _capture.ImageGrabbed += ProcessFrame;
+            _capture.Start();
+        }
+
+        private void ProcessFrame(object sender, EventArgs e)
+        {
+            if (_capture != null && _capture.Ptr != IntPtr.Zero)
+            {
+                using (_frame = new Mat())
+                {
+                    _capture.Retrieve(_frame, 0);
+                    //CvInvoke.BitwiseNot(_frame, _frame);
+                    //CvInvoke.CvtColor(_frame, _frame, ColorConversion.Bgr2Gray);
+                    CvInvoke.InRange(_frame, new ScalarArray(new MCvScalar(0, 0, 100)), new ScalarArray(new MCvScalar(100, 100, 255)), _frame);
+
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        VideoSource = ToBitmapSource(_frame);
+                        _frame.Dispose();
+                    });
+                }
+               
+            }
+        }
+
+        // Конвертирует Mat в BitmapSource
+        private ImageSource ToBitmapSource(Mat image)
+        {
+            using (var bitmap = image.ToBitmap())
+            {
+                var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(
+                    bitmap.GetHbitmap(),
+                    IntPtr.Zero,
+                    Int32Rect.Empty,
+                    BitmapSizeOptions.FromEmptyOptions());
+                return bitmapSource;
+            }
+        }
+

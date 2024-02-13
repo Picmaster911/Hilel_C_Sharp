@@ -3,6 +3,7 @@ using HomeWork_Asp_Net_MVC.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using NoteContracs;
 using MyNoteProcessor;
+using HomeWork_Asp_Net_MVC.Extantion;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,10 +31,15 @@ builder.Services.AddDbContext<AppDbContext>(
     options => options.UseSqlite(connection));
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IDataWorker<MyNote>, DataWorker>();
-builder.Services.AddScoped<INoteProcessor, NoteProcessor>();
-builder.Services.AddScoped<NotesViewModel>();
+//builder.Services.AddScoped<IDataWorker<MyNote>, DataWorker>();
+//builder.Services.AddScoped<INoteProcessor, NoteProcessor>();
+//builder.Services.AddScoped<NotesViewModel>();
+builder.Services.AddDI();
 var app = builder.Build();
+
+
+
+
 
 using (var scope = app.Services.CreateScope())
 {

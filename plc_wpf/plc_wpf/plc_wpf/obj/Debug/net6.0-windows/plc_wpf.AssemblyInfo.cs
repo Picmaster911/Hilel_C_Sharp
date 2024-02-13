@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("plc_wpf")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddf056ed1ef71fe29641880e1aa75d7b30b7fe76")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5252800e5d86535f1fe4d6b81cd83dde864e3436")]
 [assembly: System.Reflection.AssemblyProductAttribute("plc_wpf")]
 [assembly: System.Reflection.AssemblyTitleAttribute("plc_wpf")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

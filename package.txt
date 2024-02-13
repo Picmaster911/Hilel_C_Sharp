@@ -10,3 +10,7 @@ Microsoft.Extensions.DependencyInjection
 
 
 https://realhost.pro/control?returnUrl=/control
+
+
+
+C# ASP.NET Core 5 | Hangfire запуск фоновых задач
