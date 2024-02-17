@@ -53,7 +53,7 @@ namespace Wpf_UI.View.Elements {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Wpf_UI;V1.0.0.0;component/view/elements/note.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Wpf_UI;component/view/elements/note.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\Elements\Note.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

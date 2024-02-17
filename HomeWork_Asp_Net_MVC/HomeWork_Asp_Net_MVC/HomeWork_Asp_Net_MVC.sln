@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf_UI", "..\WPF_UI\Wpf_UI\
 		{C4422B7C-E3A5-4797-936C-1672F19FF23A} = {C4422B7C-E3A5-4797-936C-1672F19FF23A}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNoteProcessor.Tests", "MyNoteProcessor.Tests\MyNoteProcessor.Tests.csproj", "{91C0F434-2133-457D-BDD7-08AB5018FBD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{CAB0A4A0-2446-44D3-B2FA-A2A4949BA5D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAB0A4A0-2446-44D3-B2FA-A2A4949BA5D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAB0A4A0-2446-44D3-B2FA-A2A4949BA5D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91C0F434-2133-457D-BDD7-08AB5018FBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C0F434-2133-457D-BDD7-08AB5018FBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C0F434-2133-457D-BDD7-08AB5018FBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C0F434-2133-457D-BDD7-08AB5018FBD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HomeWork_Asp_Net_MVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5252800e5d86535f1fe4d6b81cd83dde864e3436")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8809adb01683e2fc695526b054c7a2edebac8da")]
 [assembly: System.Reflection.AssemblyProductAttribute("HomeWork_Asp_Net_MVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HomeWork_Asp_Net_MVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

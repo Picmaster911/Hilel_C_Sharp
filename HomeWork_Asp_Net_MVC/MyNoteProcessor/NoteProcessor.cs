@@ -29,7 +29,7 @@ namespace MyNoteProcessor
             return reult;
         }
 
-        public IEnumerable ReadALLFromBD()
+        public IEnumerable<MyNote> ReadALLFromBD()
         {
             var allNotes = _dataWorker.ReadALLFromBD();
             return allNotes;

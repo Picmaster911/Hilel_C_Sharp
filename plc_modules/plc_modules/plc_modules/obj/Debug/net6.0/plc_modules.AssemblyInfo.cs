@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("plc_modules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3550453812caa2ed23d8b95b25048eb504ad738e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8809adb01683e2fc695526b054c7a2edebac8da")]
 [assembly: System.Reflection.AssemblyProductAttribute("plc_modules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("plc_modules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

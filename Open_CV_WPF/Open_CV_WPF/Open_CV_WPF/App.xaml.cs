@@ -28,6 +28,7 @@ namespace Open_CV_WPF
         {
             services.AddSingleton<MainWindow>();
             services.AddSingleton<MainWindowViewModel>();
+            services.AddSingleton<CameraFirstViewModel>();            
             services.AddSingleton<CameraService>();
 
         }

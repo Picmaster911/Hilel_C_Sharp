@@ -3,28 +3,31 @@ using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.Util;
+using System.Data;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Text.RegularExpressions;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace Open_CV_WPF.Service
 {
-    public class CameraService
+    public class CameraService: IDisposable
     {
         private VideoCapture _capture;
         private Mat _frame;
         private DsDevice[] _webCams;
         private int _selectedCameraId;
         private Mat _videoSource;
+        private Mat _oldFrame;
         private int _frameWidth;
         private int _frameHeight;
         private VideoWriter _writer;
         public List<string> AllCams = new List<string>();
-
+        public bool StartRecordVideo;
+        public bool Pause;
+        public bool Stop;
+        public double VideoLength {  get; set; }  
+        public double VideoPosFrames { get; set; }
         public event Action<ImageSource> EventFromVideoCams;
 
         public int SelectedCameraId
@@ -37,30 +40,30 @@ namespace Open_CV_WPF.Service
                 _capture.Stop();
                 InitCamera();
             }
-
         }
 
-        public void StartRecord()
-        {
-            // Устанавливаем размер кадра и частоту кадров для записываемого видео
-
-        }
         public void InitCamera()
         {
             _webCams = DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice);
             var test = _webCams;
 
+            if(_capture != null)
+            {
+                _capture.Dispose();
+                 Stop = true;
+            }
+
             if (_webCams != null)
             {
+                string rtspUrl = "rtsp://admin:admin@192.168.88.100:554/video";
                 CvInvoke.UseOpenCL = false;
                 AllCams = _webCams.Select(p => p.Name).ToList();
-                _capture = new VideoCapture(_selectedCameraId);
+                //  _capture = new VideoCapture(_selectedCameraId,VideoCapture.API.DShow);
+                _capture = new VideoCapture(rtspUrl);
                 _frameWidth = (int)_capture.Get(Emgu.CV.CvEnum.CapProp.FrameWidth);
                 _frameHeight = (int)_capture.Get(Emgu.CV.CvEnum.CapProp.FrameHeight);
                 _capture.ImageGrabbed += ProcessFrame;
-                _capture.Start();
-              //  _writer = new VideoWriter("output.avi", VideoWriter.Fourcc('M', 'J', 'P', 'G'),
-                 //   30, new System.Drawing.Size(_frameWidth, _frameHeight), true);
+                _capture.Start();                
             }
         }
 
@@ -74,14 +77,17 @@ namespace Open_CV_WPF.Service
                     string currentDate = DateTime.Now.ToString();
                     //CvInvoke.BitwiseNot(_frame, _frame); //
                     //CvInvoke.CvtColor(_frame, _frame, ColorConversion.Bgr2Gray);
+                    CvInvoke.ConvertScaleAbs(_frame, _frame, 1,1);
                     //CvInvoke.InRange(_frame, new ScalarArray(new MCvScalar(0, 0, 100)), new ScalarArray(new MCvScalar(100, 100, 255)), _frame);
                     // Добавляем текущую дату в верхний левый угол кадра
                     CvInvoke.PutText(_frame, currentDate, new System.Drawing.Point(10, 30),
                     FontFace.HersheyComplex, 1, new MCvScalar(125, 225, 155), 2);
                     //_frame = DetectRedObjects(_frame);
-                    DrawGrid(_frame);
-                   // _writer.Write(_frame);
-                    EventFromVideoCams.Invoke(ToBitmapSource(_frame));
+                    _oldFrame = _frame.Clone();
+                    //DrawGrid(_frame);
+                    if (StartRecordVideo)
+                        StartRecord(_frame);
+                    EventFromVideoCams.Invoke(ToBitmapSource(_frame));                    
                 }
 
             }
@@ -148,6 +154,33 @@ namespace Open_CV_WPF.Service
             }
             return frame;
         }
+        
+        public void CreateWriter ()
+        {
+
+              _writer = new VideoWriter($"{DateTime.Now.ToString("yyyy-MM-dd-ss")}.avi", VideoWriter.Fourcc('M', 'J', 'P', 'G'),
+              30, new System.Drawing.Size(_frameWidth, _frameHeight), true);
+        }
+        public void StartRecord(Mat frame)
+        {
+                _writer.Write(frame);
+      
+        }
+
+        public void StoptRecord()
+        {
+            if ( _writer != null ) 
+            {
+                _writer.Dispose();
+            }
+        }
+
+        public void CloseService()
+        {
+             Stop = true;
+            _capture.Stop();
+            _capture.Dispose();
+        }
 
         public void GoReadVideo(string SelectedFilePath)
         {
@@ -163,21 +196,47 @@ namespace Open_CV_WPF.Service
                         Console.WriteLine("Не удалось открыть видеофайл.");
                         return;
                     }
+                    VideoLength = capture.Get(Emgu.CV.CvEnum.CapProp.FrameCount);
 
-                    while (true)
+                    while (!Stop)
                     {
-                        Mat frame = new Mat();
-                        capture.Read(frame); ; // Считываем кадр из видеофайла
 
-                        if (frame.IsEmpty) // Если кадр пустой, значит видео закончилось
-                            break;
-                        EventFromVideoCams.Invoke(ToBitmapSource(frame));
+                        VideoPosFrames = capture.Get(Emgu.CV.CvEnum.CapProp.PosFrames);
+                        
+                        if (!Pause)
+                        {
+                            Mat frame = new Mat();
+                            capture.Read(frame); ; // Считываем кадр из видеофайла
+                            if (frame.IsEmpty) // Если кадр пустой, значит видео закончилось
+                                break;
+                            EventFromVideoCams.Invoke(ToBitmapSource(frame));
+                            _oldFrame = frame;
+                        }
+                        else
+                        {                           
+                            EventFromVideoCams.Invoke(ToBitmapSource(_oldFrame));
+                        }
+                     
                         // Ожидаем нажатия клавиши для выхода
                         if (Emgu.CV.CvInvoke.WaitKey(30) >= 0)
                             break;
+
                     }
                 }
             }
+        }
+      
+    public void TakeScreenshot (string FileName) 
+        {
+            if (_oldFrame != null)
+            {
+                CvInvoke.Imwrite($"{FileName}{DateTime.Now.ToString("HH-ss")}.jpg", _oldFrame);
+            }
+        }
+
+        public void Dispose()
+        {
+            CloseService();
         }
     }
 }

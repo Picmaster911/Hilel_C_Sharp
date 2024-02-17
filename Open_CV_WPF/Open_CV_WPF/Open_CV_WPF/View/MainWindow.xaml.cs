@@ -20,16 +20,5 @@ namespace Open_CV_WPF.View
         {
             InitializeComponent();
         }
-        private void image1_Initialized(object sender, EventArgs e)
-        {
-            //string win1 = "Test Window (Press any key to close)"; //The name of the window
-            ////CvInvoke.NamedWindow(win1); //Create the window using the specific name
-            //using (Mat frame = new Mat())
-            //using (VideoCapture capture = new VideoCapture())
-            //{
-            //    capture.Read(frame);
-            //    image1.Source = frame.ToBitmapSource();
-            //}
-        }
     }
 }
